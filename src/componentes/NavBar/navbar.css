@@ -1,0 +1,93 @@
+
+.navbarFull {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+.mosaico1 {
+    background-color: red;
+    width: 100%;
+    display: flex;
+    height: 9rem;
+    justify-content: space-between;
+  }
+  .logos {
+    display: flex;
+    align-items: center;
+    padding-right: 8rem;
+  }
+.redes{
+    display: flex;
+    padding-right: 1rem;
+}
+.redes :hover{
+    color: yellow;
+}
+  .logo {
+    height: 8.7rem;
+    width: 21rem;
+    justify-content: flex-start;
+    margin-left: 8rem;
+    position: relative;
+    top: 2px;
+    bottom: 2px;
+  }
+  .buscador {
+    display: flex;
+    align-items: center;
+  }
+  .input-group-append{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .buscador2 {
+    height: 2.5rem;
+    border-radius: 1.5rem;
+  }
+  nav {
+    width: 100%;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+  }
+.yellow :hover{
+  border-radius: 8px;
+  background-color: rgba(255, 255, 0, 0.718);
+}
+.nav-item .dropdown:hover{
+  border-radius: 8px;
+  background-color: rgba(255, 255, 0, 0.718);
+}
+li{
+    font-size: 1rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+}
+.mosaico{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(203, 0, 0) !important;
+}
+.navbar-nav {
+    display: flex;
+    justify-content: center !important;
+    border: none;
+    align-items: center;
+}
+.nav-item:hover .dropdown-menu{
+  display: block;
+  background-color: rgb(203, 0, 0);
+}
+.navbar-nav .dropdown-menu {
+  width: 100vw !important;
+  left: -79rem!important;
+  right: auto !important;
+  border-radius: 0 !important;
+}
+
+  
+

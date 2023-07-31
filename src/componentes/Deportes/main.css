@@ -1,0 +1,49 @@
+.imgMain{
+    height: 25rem;
+    width: 28rem;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+.imgMain:hover{
+    transform: scale(1.1);
+}
+.filasPhotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-fluid {
+    position: relative;
+  }
+  
+  .container-fluid .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .container-fluid .filasPhotos {
+    flex: 0 0 50%; /* Ajusta el tamaño de cada fila de fotos según tus necesidades */
+    position: relative;
+    padding: 10px; /* Ajusta el espaciado entre las fotos según tus necesidades */
+  }
+  
+  .container-fluid .titulo {
+    position: relative;
+  }
+  
+
+  
+  .container-fluid h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px; /* Ajusta el espaciado alrededor del texto según tus necesidades */
+    color: #fff;
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+

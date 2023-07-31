@@ -1,0 +1,36 @@
+
+.portadaIndex {
+    height: 750px;
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+.video {
+    width: 100%;
+    height: 17rem;
+    display: block;
+    object-fit: fill;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0px;
+  }
+.btnCards{
+    color: white;
+    background-color:rgb(203, 0, 0);
+    transition: transform 0.3s ease;
+}
+.btnCards:hover{
+  color: white;
+  background-color: rgb(203, 0, 0);
+  transform: scale(1.1);
+}
+.cards{
+  display: flex;
+  position: relative;
+  margin-left: 190px;
+}
+
+

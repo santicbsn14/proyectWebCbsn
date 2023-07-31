@@ -1,0 +1,51 @@
+
+.titulo{
+    color: red;
+}
+.accordion{
+  width: 800px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+ :hover .accordion-button{
+  color: black;
+}
+.contenedorUno{
+  display: flex;
+  justify-content: space-between;
+}
+.portadaBs{
+    width: 100%;
+    height: 30rem;
+    display: block;
+    object-fit: fill;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0px;
+}
+
+h4{
+  font-size: 26px;
+  color: red;
+}
+.formulario{
+  width: 500px;
+  padding-bottom: 30px;
+}
+.accordion-body{
+  display: flex;
+  flex-direction: column;
+}
+p{
+  font-size: 14px;
+}
+.textoIntro{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.fotoSpon{
+  width: 400px;
+  height: 150px;
+  padding-bottom: 3px;
+}
