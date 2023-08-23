@@ -1,21 +1,28 @@
 import React,{useState} from "react";
-import escudoyletra from '../imagenes/ESCUDO Y LETRA.png'
+import escudoyletra from '../imagenes/escudo_y_letra.png'
 import "./navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook,faYoutube, faTwitter,faInstagram, faWhatsapp} from  '@fortawesome/free-brands-svg-icons';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import Autoridades from "../ElClub/autoridades";
 import Basquet from "../Deportes/basquet";
 import Home from '../Home/home';
 import Futbol from "../Deportes/futbol";
 import Contacto from "../Contacto/contacto";
-import MainSports from "../Deportes/mainDeportes";
+import MainSports from "../Mains/mainDeportes";
+import MainInstalaciones from "../Mains/mainInstalaciones";
+
+
+
+
 function NavBar(){
   const iconStyle = {
     fontSize: "1.4rem",
     padding: '5px',
     color: 'black'
   };
+  const navigate = useNavigate()
+  const [searchResults, setSearchResults] = useState([]);
 
   const color = 'rgb(203, 0, 0)';
 
@@ -32,6 +39,22 @@ function NavBar(){
   const boxStyle = {
     backgroundColor: isHovered ? color : 'red',
   };
+
+  const redirectionResults =  (word)=>{
+    console.log(word)
+    navigate(`/newsRequests/${word}`)
+  }
+  const handleFormSubmit = async (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    const form = event.target;
+    const input = form.querySelector("input[type=search]");
+
+    const searchTerm = input.value;
+
+   redirectionResults(searchTerm)
+  };
+
     return (
       <section className="navbarFull">
       <div className="container-fluid mosaico1" style={boxStyle}>
@@ -45,14 +68,14 @@ function NavBar(){
             <FontAwesomeIcon icon={faInstagram} style={iconStyle} />
           </div>
     
-          <form className="d-flex buscador" role="search">
-            <input className="form-control bg-dark text-light border-dark buscador2 me-2" type="search" placeholder="Search" aria-label="Search" />
-            <div className="input-group-append" style={{height:'1rem' }}>
-              <button className="btn btn-dark" type="submit" ><i className="fa fa-search"></i></button>
-            </div>
-          </form>
+          <form className="d-flex buscador" role="search" onSubmit={handleFormSubmit}>
+             <input className="form-control bg-dark text-light border-dark buscador2 me-2" type="search" placeholder="Search" aria-label="Search" />
+               <div className="input-group-append" style={{ height: "1rem" }}>
+                <button className="btn btn-dark" type="submit"><i className="fa fa-search"> </i></button>
+               </div>
+           </form>
+           </div>
         </div>
-      </div>
     
       <div className="container-fluid mosaico ">
         <nav className="navbar navbar-expand-lg " >
@@ -69,12 +92,12 @@ function NavBar(){
                 </Link>
               </li>
               <li className="nav-item yellow" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                <Link  className="nav-link" >
+                <Link to='/mainEscuelas'  className="nav-link" >
                   <strong className="btn-dark hover">Escuelas</strong>
                 </Link>
               </li>
               <li className="nav-item yellow" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                <Link  className="nav-link" >
+              <Link to='/mainInstalaciones' className="nav-link" element={<MainInstalaciones />}>
                   <strong className="btn-dark hover">Instalaciones</strong>
                 </Link>
               </li>
@@ -118,19 +141,20 @@ function NavBar(){
           </div>
           <div className="col-lg-4">
             <h5 className="mx-auto"><strong style={{ color: 'yellow' }}>INSTALACIONES</strong></h5>
-            <li><Link to='/basquet' className="nav-link dropdown-item btn-dark" element={<Basquet />} ><strong className="btn-dark">Club de campo</strong></Link></li>
-            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark" element={<Futbol />} ><strong className="btn-dark">Sede Pellegrini</strong></Link></li>
-            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark" element={<Futbol />} ><strong className="btn-dark">Sede Morteo</strong></Link></li>
+            <li><Link to='/basquet' className="nav-link dropdown-item btn-dark"><strong className="btn-dark">Club de campo</strong></Link></li>
+            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark"><strong className="btn-dark">Sede Pellegrini</strong></Link></li>
+            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark"><strong className="btn-dark">Sede Morteo</strong></Link></li>
           </div>
           <div className="col-lg-4">
             <h5 className="mx-auto"><strong style={{ color: 'yellow' }}>ACTIVIDADES</strong></h5>
-            <li><Link to='/basquet' className="nav-link dropdown-item btn-dark" element={<Basquet />} ><strong className="btn-dark">Basquet</strong></Link></li>
-            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark" element={<Futbol />} ><strong className="btn-dark">Futbol</strong></Link></li>
+            <li><Link to='/basquet' className="nav-link dropdown-item btn-dark"><strong className="btn-dark">Basquet</strong></Link></li>
+            <li><Link to='/ajedrez' className="nav-link dropdown-item btn-dark"><strong className="btn-dark">Ajedrez</strong></Link></li>
+            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark"><strong className="btn-dark">Futbol</strong></Link></li>
           </div>
           <div className="col-lg-4">
             <h5 className="mx-auto"><strong style={{ color: 'yellow' }}>TALLERES</strong></h5>
-            <li><Link to='/basquet' className="nav-link dropdown-item btn-dark" element={<Basquet />} ><strong className="btn-dark">Fotografia</strong></Link></li>
-            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark" element={<Futbol />} ><strong className="btn-dark">Ingles</strong></Link></li>
+            <li><Link to='/basquet' className="nav-link dropdown-item btn-dark"><strong className="btn-dark">Fotografia</strong></Link></li>
+            <li><Link to='/futbol' className="nav-link dropdown-item btn-dark" ><strong className="btn-dark">Ingles</strong></Link></li>
           </div>
           <div className="col-lg-4">
             <h5 className="mx-auto"><strong style={{ color: 'yellow' }}>ÁREA DE SALUD</strong></h5>
@@ -147,6 +171,7 @@ function NavBar(){
         </nav>
       </div>
     </section>
+    
     )
 }
 export default NavBar

@@ -1,6 +1,6 @@
 import React from "react";
 import './footer.css';
-import escudoyletra from '../imagenes/ESCUDO Y LETRA.png'
+import escudoyletra from '../imagenes/escudo_y_letra.png'
 import telefono from "../imagenes/0336-4454540.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook,faYoutube, faTwitter, faInstagram, faWhatsapp} from  '@fortawesome/free-brands-svg-icons'

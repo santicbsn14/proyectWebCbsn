@@ -1,14 +1,14 @@
-import React from "react";
-import './sports.css'
-import portBasquet from '../imagenes/portbasquettest.jpg'
+import React from 'react'
 import logoNuevo from '../imagenes/logoNuevo.jpg'
-function Basquet(){
+import ajedrezPort from '../imagenes/ajedrez_port.jpg'
+import './sports.css'
+function Ajedrez(){
     return(
-    <main className="mainSports" style={{marginTop:'0px'}}>
-      <img src={portBasquet} className="portadaBs col-lg-12 " alt="portadaBas" style={{paddingTop: '10rem' }}/>
-    <section className="container" >
-    <div className="row">
-      <div class="accordion col-lg-6" id="accordionExample">
+    <main className='mainSports'> 
+    <img src={ajedrezPort} className="portadaBs col-lg-12 " alt="portadaBas" style={{paddingTop: '12rem' }}/>
+      <section className="container" >
+        <div className="row">
+          <div class="accordion col-lg-6" id="accordionExample">
             <h4 className="">Horarios</h4>
             <div class="accordion-item ">
                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
@@ -78,43 +78,41 @@ function Basquet(){
                     </div>
                   </div>
                 </div>
-      </div>
-      
-      
-      <form className=" col-lg-6 row g-3 formulario mx-auto">
-            <h4>Contactar con profesores</h4>
-            <p>¡Obtendra una respuesta en la direccion del correo electronico que ingrese!</p>
-            <div className="col-md-6">
-              <label for="inputEmail4" className="form-label">Nombre</label>
-              <input type="email" className="form-control" id="inputEmail4"/> 
-            </div>
-            <div className="col-md-6">
-              <label for="inputPassword4" className="form-label">Email</label>
-              <input type="password" className="form-control" id="inputPassword4"/>
-            </div>
-            <div className="col-12">
-              <label for="inputAddress2" className="form-label">Mensaje</label>
-              <input type="text" className="form-control" style={{height: '80px'}} id="inputAddress2"/>
-            </div>
-            <div className="col-lg-12">
-              <label for="inputState" className="form-label">Categoria</label>
-              <select id="inputState" className="form-select">
-                <option selected>Futbol Infantil</option>
-                <option>2007/2008</option>
-                <option>2009/2010</option>
-                <option>Quinta</option>
-                <option>Sub 23</option>
-              </select>
-            </div>
-            <div className="col-12">
-              <button type="submit" id="probando" onclick="mensajeenviado()" className="btn btn-primary">Enviar</button>
-            </div>
-      </form>
-          
-            </div> 
+          </div>
 
-  </section>
-  </main>
+    <form className=" col-lg-6 row g-3 formulario mx-auto">
+      <h4>Contactar con profesores</h4>
+      <p>¡Obtendra una respuesta en la direccion del correo electronico que ingrese!</p>
+      <div className="col-md-6">
+        <label for="inputEmail4" className="form-label">Nombre</label>
+        <input type="email" className="form-control" id="inputEmail4"/> 
+      </div>
+      <div className="col-md-6">
+        <label for="inputPassword4" className="form-label">Email</label>
+        <input type="password" className="form-control" id="inputPassword4"/>
+      </div>
+      <div className="col-12">
+        <label for="inputAddress2" className="form-label">Mensaje</label>
+        <input type="text" className="form-control" style={{height: '80px'}} id="inputAddress2"/>
+      </div>
+      <div className="col-lg-12">
+        <label for="inputState" className="form-label">Categoria</label>
+        <select id="inputState" className="form-select">
+          <option selected>Futbol Infantil</option>
+          <option>2007/2008</option>
+          <option>2009/2010</option>
+          <option>Quinta</option>
+          <option>Sub 23</option>
+        </select>
+      </div>
+      <div className="col-12">
+        <button type="submit" id="probando" onclick="mensajeenviado()" className="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+    
+      </div> 
+      </section>
+      </main>
     )
 }
-export default Basquet
+export default Ajedrez

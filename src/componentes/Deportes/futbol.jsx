@@ -1,11 +1,11 @@
 import React from 'react'
 import logoNuevo from '../imagenes/logoNuevo.jpg'
-import diseñoProvisorio from  '../imagenes/DiseñoProvisorio.png'
-import './basquet.css'
+import futsalPort from '../imagenes/futsal_port.jpeg'
+import './sports.css'
 function Futbol(){
     return(
     <main className='mainSports'> 
-    <img src={diseñoProvisorio} className="portadaBs col-lg-12 " alt="portadaBas" style={{paddingTop: '12rem' }}/>
+    <img src={futsalPort} className="portadaBs col-lg-12 " alt="portadaBas" style={{paddingTop: '12rem' }}/>
       <section className="container" >
         <div className="row">
           <div class="accordion col-lg-6" id="accordionExample">

@@ -28,7 +28,7 @@
   transform: scale(1.1);
 }
 .cards{
-  display: flex;
+  display: flex ;
   position: relative;
   margin-left: 190px;
 }
