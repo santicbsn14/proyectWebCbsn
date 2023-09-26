@@ -16,26 +16,51 @@ import MainInstalaciones from './componentes/Mains/mainInstalaciones.jsx';
 import NewsDetailContainer from './componentes/NewsDetail/NewsDetailContainer.jsx';
 import MainEscuelas from './componentes/Mains/mainEscuelas.jsx';
 import Ajedrez from './componentes/Deportes/ajedres.jsx';
+import GimnasiaAcuatica from './componentes/Deportes/gimnasiaAcuatica.jsx';
+import Camping from './componentes/Instalaciones/camping.jsx';
+import SedePellegrini from './componentes/Instalaciones/sedePellegrini.jsx';
+import MainElClub from './componentes/Mains/mainElCLub.jsx';
+import EFI from './componentes/Deportes/efi.jsx';
+import GimnasiaArtistica from './componentes/Deportes/gimnasiaArtistica.jsx';
+import Zumba from './componentes/Deportes/zumba.jsx';
+import Futsal from './componentes/Deportes/futsal.jsx';
+import Jardin from './componentes/Escuela/jardin.jsx';
+import Primaria from './componentes/Escuela/primario.jsx';
+import LoginPanelAdmin from './componentes/PanelAdministrador/loginForAdmin.jsx';
+import PanelAdmin from './componentes/PanelAdministrador/panelAdmin.jsx';
 
 
 
 
 function App() {
+  const keyPanel = import.meta.env.VITE_REACT_APP_KEY_PANEL
   return (
     <div className='app'>
       <BrowserRouter>
       <NavBar/>
       <Routes>
+      <Route path={`/loginForAdmin/${keyPanel}`} element={<LoginPanelAdmin/>}/>
+      <Route path={'/panelAdmin'} element={<PanelAdmin/>}/>
       <Route path='/' element={<Home/>}/>
       <Route path="/newsRequests/:word" element={<RenderNewsRequests />} />
       <Route path="/newsdetail/:id" element={<NewsDetailContainer/>}/>
       <Route path='/mainSports' element={<MainSports/>}/>
       <Route path='/mainInstalaciones' element={<MainInstalaciones/>}/>
+      <Route path='/camping' element={<Camping/>}/>
+      <Route path='/sedePellegrini' element={<SedePellegrini/>}/>
       <Route path="/mainEscuelas" element={<MainEscuelas/>}/>
-      <Route path="/elclub" element={<Autoridades/>}/>
+      <Route path="/mainElCLub" element={<MainElClub/>}/>
+      <Route path="/autoridades" element={<Autoridades/>}/>
       <Route path="/basquet" element={<Basquet/>}/>
       <Route path="/futbol" element={<Futbol/>}/>
       <Route path="/ajedrez" element={<Ajedrez/>}/>
+      <Route path="/gimnasiaAcuatica" element={<GimnasiaAcuatica/>}/>
+      <Route path="/gimnasiaArtistica" element={<GimnasiaArtistica/>}/>
+      <Route path="/zumba" element={<Zumba/>}/>
+      <Route path="/futsal" element={<Futsal/>}/>
+      <Route path="/EFI" element={<EFI/>}/>
+      <Route path="/jardin" element={<Jardin/>}/>
+      <Route path="/primaria" element={<Primaria/>}/>
       <Route path="/contacto" element={<Contacto/>}/>
       </Routes>
       <Footer/>

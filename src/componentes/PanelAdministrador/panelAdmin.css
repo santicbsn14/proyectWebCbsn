@@ -1,0 +1,14 @@
+.btnForms {
+    color: white;
+    background-color: rgb(203, 0, 0);
+    transition: transform 0.3s ease;
+    width: 31px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+  }
+  .btnForms :hover{
+    color: white;
+    background-color: rgb(203, 0, 0);
+    transform: scale(1.1);
+  }

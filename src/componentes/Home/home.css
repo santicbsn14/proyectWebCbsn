@@ -1,36 +1,35 @@
-
 .portadaIndex {
-    height: 750px;
+  height: 600px; /* 750 - 20% */
 }
-.boton{
-    display: flex;
-    justify-content: center;
-    width: 25%;
+.boton {
+  display: flex;
+  justify-content: center;
+  width: 20%; /* 25% - 20% */
 }
 .video {
-    width: 100%;
-    height: 17rem;
-    display: block;
-    object-fit: fill;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0px;
-  }
-.btnCards{
-    color: white;
-    background-color:rgb(203, 0, 0);
-    transition: transform 0.3s ease;
+  width: 100%; /* 100% - 20% */
+  height: 13.6rem; /* 17rem - 20% */
+  display: block;
+  object-fit: fill;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 0px; /* No cambio en este caso */
 }
-.btnCards:hover{
+.btnCards {
+  color: white;
+  background-color: rgb(203, 0, 0);
+  transition: transform 0.3s ease;
+}
+.btnCards:hover {
   color: white;
   background-color: rgb(203, 0, 0);
   transform: scale(1.1);
 }
-.cards{
-  display: flex ;
+.cards {
+  display: flex;
   position: relative;
-  margin-left: 190px;
+  margin-left: 152px; /* 190px - 20% */
 }
 
 

@@ -34,7 +34,7 @@ function Contacto(){
                 <input type="text" className="form-control message" id="inputAddress2" />
               </div>
               <div className="col-12 col-md-12 col-sm-12">
-                <button type="submit" className="btn  ">Enviar</button>
+                <button type="submit" className="btn btnCards ">Enviar</button>
               </div>
             </form>
           </div>

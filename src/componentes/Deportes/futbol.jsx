@@ -1,22 +1,22 @@
 import React from 'react'
 import logoNuevo from '../imagenes/logoNuevo.jpg'
-import futsalPort from '../imagenes/futsal_port.jpeg'
+import futsalPort from '../imagenes/futsal_port.webp'
 import './sports.css'
 function Futbol(){
     return(
-    <main className='mainSports'> 
-    <img src={futsalPort} className="portadaBs col-lg-12 " alt="portadaBas" style={{paddingTop: '12rem' }}/>
-      <section className="container" >
-        <div className="row">
-          <div class="accordion col-lg-6" id="accordionExample">
+    <main className='mainSports' style={{marginTop:'8rem'}}> 
+    <img src={futsalPort} className="portadaBs col-lg-12 " alt="portadaBas" />
+    <section className="container" >
+    <div className="row">
+      <div className="accordion col-lg-6" id="accordionExample">
             <h4 className="">Horarios</h4>
-            <div class="accordion-item ">
-               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
+            <div className="accordion-item ">
+               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
                   INFANTILES
                </button>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <img src={logoNuevo} style={{height: '55px', width:'95px'}} className="mx-auto" alt="logo"/>
+                  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div className="accordion-body">
+                        <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
                         <h6>Dias: Martes-Viernes  Sede:Pellegrini</h6> <p>Profesores: Adrian Demichelis-Marcos Nardone-Diego Pontieri</p>
                           <ul className="list-group">
                           <li className="list-group-item"> <strong>2017/2018:</strong> 18:00hs 19:00hs </li>
@@ -50,7 +50,7 @@ function Futbol(){
                </button>
                   <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                      <img src={logoNuevo} style={{height: '55px', width:'95px'}} className="mx-auto" alt="logo"/>
+                      <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
                       <h6>Dias: Días: Lunes–Martes –Miércoles–Jueves –Viernes (1 día de descanso)  Sede:Camping</h6> 
                       <p>Profesores: Marcelo Ocanto-Jose Barraza-Ricardo Barrano-Fernando Lagorio-Daniel Huber-Roberto Cerino</p>
                       <ul className="list-group">
@@ -69,7 +69,7 @@ function Futbol(){
                </button>
                   <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                      <img src={logoNuevo} style={{height: '55px', width:'95px'}} className="mx-auto" alt="logo"/>
+                      <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
                       <ul className="list-group">
                         <h6>Dias: Días: lunes–Martes –Miércoles–Jueves –Viernes (1 día de descanso)  Sede:Camping</h6>
                         <p> Cuerpo Tecnico: Daniel Huber- Fernando Lagorio- Jose Feroci </p>
@@ -78,40 +78,43 @@ function Futbol(){
                     </div>
                   </div>
                 </div>
-          </div>
+      </div>
+      
+      
+      <form className="col-lg-6 row g-3 formulario mx-auto">
+  <h4>Contactar con profesores</h4>
+  <p>¡Obtendrá una respuesta en la dirección de correo electrónico que ingrese!</p>
+  <div className="col-md-6">
+    <label htmlFor="inputEmail4" className="form-label">Nombre</label>
+    <input type="text" className="form-control" id="inputEmail4" />
+  </div>
+  <div className="col-md-6">
+    <label htmlFor="inputPassword4" className="form-label">Email</label>
+    <input type="email" className="form-control" id="inputPassword4" />
+  </div>
+  <div className="col-12">
+    <label htmlFor="inputAddress2" className="form-label">Mensaje</label>
+    <input type="text" className="form-control" style={{ height: '64px' }} id="inputAddress2" />
+  </div>
+  <div className="col-lg-12">
+    <label htmlFor="inputState" className="form-label">Categoría</label>
+    <select id="inputState" className="form-select">
+      <option value="Futbol Infantil">Futbol Infantil</option>
+      <option value="2007/2008">2007/2008</option>
+      <option value="2009/2010">2009/2010</option>
+      <option value="Quinta">Quinta</option>
+      <option value="Sub 23">Sub 23</option>
+    </select>
+  </div>
+  <div className="col-12">
+    <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
+  </div>
+</form>
 
-    <form className=" col-lg-6 row g-3 formulario mx-auto">
-      <h4>Contactar con profesores</h4>
-      <p>¡Obtendra una respuesta en la direccion del correo electronico que ingrese!</p>
-      <div className="col-md-6">
-        <label for="inputEmail4" className="form-label">Nombre</label>
-        <input type="email" className="form-control" id="inputEmail4"/> 
-      </div>
-      <div className="col-md-6">
-        <label for="inputPassword4" className="form-label">Email</label>
-        <input type="password" className="form-control" id="inputPassword4"/>
-      </div>
-      <div className="col-12">
-        <label for="inputAddress2" className="form-label">Mensaje</label>
-        <input type="text" className="form-control" style={{height: '80px'}} id="inputAddress2"/>
-      </div>
-      <div className="col-lg-12">
-        <label for="inputState" className="form-label">Categoria</label>
-        <select id="inputState" className="form-select">
-          <option selected>Futbol Infantil</option>
-          <option>2007/2008</option>
-          <option>2009/2010</option>
-          <option>Quinta</option>
-          <option>Sub 23</option>
-        </select>
-      </div>
-      <div className="col-12">
-        <button type="submit" id="probando" onclick="mensajeenviado()" className="btn btn-primary">Enviar</button>
-      </div>
-    </form>
-    
-      </div> 
-      </section>
+          
+            </div> 
+
+  </section>
       </main>
     )
 }

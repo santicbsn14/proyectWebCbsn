@@ -1,51 +1,60 @@
 
-.titulo{
-    color: red;
-}
-.accordion{
-  width: 800px;
-  padding-bottom: 30px;
-  padding-top: 30px;
-}
- :hover .accordion-button{
-  color: black;
-}
-.contenedorUno{
-  display: flex;
-  justify-content: space-between;
-}
-.portadaBs{
-    width: 105.3rem;
-    height: 700px;
-    display: block;
-    object-fit: fill;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0px;
+.accordion {
+  width: 640px !important;
+  padding-bottom: 24px!important;
+  padding-top: 24px !important;
 }
 
-h4{
-  font-size: 26px;
-  color: red;
+:hover .accordion-button {
+  color: black !important;
 }
-.formulario{
-  width: 500px;
-  padding-bottom: 30px;
+
+.contenedorUno {
+  display: flex !important;
+  justify-content: space-between !important;
 }
-.accordion-body{
-  display: flex;
-  flex-direction: column;
+
+.portadaBs{
+  width: 84.24rem !important;
+  height: 500px !important;
+  display: block !important;
+  object-fit: fill !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  left: 0px !important;
 }
-p{
-  font-size: 14px;
+
+h4 {
+  font-size: 21px !important;
+  color: red !important;
 }
-.textoIntro{
-  padding-left: 100px;
-  padding-right: 100px;
+
+.formulario {
+  width: 400px !important;
+  padding-bottom: 24px !important;
 }
-.fotoSpon{
-  width: 400px;
-  height: 150px;
-  padding-bottom: 3px;
+
+.accordion-body {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+p {
+  font-size: 11px !important;
+}
+
+.textoIntro {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+
+.fotoSpon {
+  width: 320px !important;
+  height: 120px !important;
+  padding-bottom: 2.6px !important;
+}
+
+.container {
+  margin-left: 6.4rem!important;
 }
