@@ -2,7 +2,7 @@ import React from "react";
 import './main.css';
 import voleyMain from '../imagenes/voley_main.webp'
 import zumbaMain from '../imagenes/zumba_main.webp'
-import futsalMain from '../imagenes/Futsal_main.webp'
+import futsalMain from '../imagenes/futsal_main.webp'
 import futbolMain from '../imagenes/futbol_main.webp'
 import basquetMain from '../imagenes/basquet_main.webp'
 import ajedrezMain from '../imagenes/ajedrez_main.webp'
