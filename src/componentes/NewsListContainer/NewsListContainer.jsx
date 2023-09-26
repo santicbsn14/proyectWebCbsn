@@ -23,8 +23,8 @@ function NewsListContainer() {
   }, []);
  
     return (
-      <div className="container-fluid" style={{margin:'0px'}}>
-       {news ? <NewsList news={news}/>: <div style={{marginTop:'0px', position:'relative', left:'550px'}}><Loader/></div>}
+      <div className="container-fluid" >
+       {news ? <NewsList news={news}/>: <div style={{margin:'0px', position:'relative'}}><Loader/></div>}
        </div>
     )
       

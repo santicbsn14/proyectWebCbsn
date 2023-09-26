@@ -26,10 +26,6 @@
   background-color: rgb(203, 0, 0);
   transform: scale(1.1);
 }
-.cards {
-  display: flex;
-  position: relative;
-  margin-left: 152px; /* 190px - 20% */
-}
+
 
 

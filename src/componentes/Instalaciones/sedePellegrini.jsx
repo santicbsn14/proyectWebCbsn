@@ -10,7 +10,7 @@ function SedePellegrini(){
       <img src={portPellegrini} className="portadaBs col-lg-12 " alt="portadaBas" style={{paddingTop: '10rem' }}/>
     <section className="container" >
     <div className="row">
-    <div  class=" col-lg-6 row g-3" style={{fontSize:'12px', marginTop:'14px'}}>
+    <div  class=" col-lg-6 col-md-12 col-sm-12 row g-3" style={{fontSize:'12px', marginTop:'14px'}}>
         <h4 >Espacios</h4>
             <div className="mx-auto"   >
               <strong>Nuestro club de campo, ubicado en la RN9 KM 234 es un espacio que ofrece todos los servicios necesarios para pasar un día de actividades al aire libre. Con increíbles piletas, quinchos con parrillas, jardines, calesita para los más chicos, vestuarios con duchas y muchos más.</strong>
@@ -30,7 +30,7 @@ function SedePellegrini(){
       </div>
       
       
-      <form className=" col-lg-6 row g-3 formulario mx-auto" >
+      <form className=" col-lg-6 col-md-12 col-sm-12 row g-3 formulario mx-auto" >
             <h4>Contactar Para Reservas</h4>
             <p>¡Obtendra una respuesta en la direccion del correo electronico que ingrese!</p>
             <div className="col-md-6">

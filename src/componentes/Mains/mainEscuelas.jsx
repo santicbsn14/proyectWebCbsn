@@ -8,17 +8,17 @@ function MainEscuelas(){
     return(
     <main style={{marginTop:'11rem'}} className="container-fluid mainSports">
         <div className="row" >
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
                 <Link to='/jardin'>
                     <img src={jardinMain } className="imgMain" alt="" />
                 </Link>
             </div>    
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
                 <Link to='/primaria'>
                     <img src={primariaMain} className="imgMain" alt="" />
                 </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
                 <Link to='/autoridades'>
                     <img src={secundariaMain} className="imgMain" alt="" />
                 </Link>

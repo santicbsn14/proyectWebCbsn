@@ -1,0 +1,8 @@
+/* .videoInicio{
+    padding-top:160px;
+} */
+@media(max-width:991px){
+.videoInicio{
+    padding-top: 152px;
+}
+}

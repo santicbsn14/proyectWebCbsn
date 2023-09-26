@@ -4,7 +4,7 @@ import News from './News'
 function NewsList({news}) {
  
   return (
-    <div className='row' style={{margin:'0px'}}>
+    <div className='row' style={{width:'100%'}} >
         {news.data.map((newsDocument)=>{
             return(
                 <News

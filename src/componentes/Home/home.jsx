@@ -11,11 +11,11 @@ function Home(){
  
   
   return(
-    <main className="mainIndex ">
+    <main className="mainIndex" >
         <Video />
       <section  className="container-fluid">
         <div className="row">
-          <div className="col-lg-9 cards" style={{paddingTop:'30px', paddingBottom:'700px', marginLeft:'8rem' }}>
+          <div className="col-lg-12" style={{paddingTop:'30px', paddingBottom:'700px', paddingRight:'0px', paddingLeft:'0px' }}>
             <NewsListContainer/>
           </div>
         </div>

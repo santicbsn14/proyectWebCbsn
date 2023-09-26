@@ -12,49 +12,49 @@ import efiMain from '../imagenes/efi_main.webp'
 import { Link } from "react-router-dom";
 function MainSports(){
     return(
-    <main style={{marginTop:'11rem'}} className="container-fluid mainSports">
-        <div className="row" >
-            <div className="col-lg-4">
+    <main  className="container-fluid mainSports">
+        <div className="row mx-auto" >
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
                 <Link to='/zumba'>
                 <img src={zumbaMain} className="imgMain" alt="" />
                 </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/futsal'>
                 <img src={futsalMain} className="imgMain" alt="" />
             </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/basquet'>
                 <img src={voleyMain} className="imgMain" alt="" />
             </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
                <Link to='/futbol'>
                 <img src={futbolMain} className="imgMain" alt="" />
                 </Link> 
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/basquet'>
                 <img src={basquetMain} className="imgMain" alt="" />
             </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/EFI'> 
                 <img src={efiMain} className="imgMain" alt="" />
             </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/ajedrez'> 
                 <img src={ajedrezMain} className="imgMain" alt="" />
             </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/gimnasiaAcuatica'> 
                 <img src={gimnasiaAcuaticaMain} className="imgMain" alt="" />
             </Link>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/basquet'> 
                 <img src={gimnasiaArtisticaMain} className="imgMain" alt="" />
             </Link>

@@ -1,104 +1,133 @@
-.navbarFull {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%; 
-  z-index: 999;
-  margin:0
+@media (min-width: 992px) {
+  .navbarFull {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 999;
+    margin:0
+  }
+  .mosaicoUno{
+      background-color: red;
+      display: flex;
+      height: 7.2rem;
+      justify-content: space-between;
+  }
+    .logos {
+      display: flex;
+      align-items: center;
+      padding-right: 6.4rem; /* 8rem - 20% */
+    }
+    
+    .redes {
+      display: flex;
+      padding-right: 0.8rem; /* 1rem - 20% */
+    }
+    
+    .logoRedes:hover {
+      color: yellow !important;
+    }
+    
+    .logo {
+      height: 6.96rem; 
+      width: 16.8rem; 
+      justify-content: flex-start;
+      margin-left: 6.4rem;
+      position: relative;
+      top: 2px;
+      bottom: 2px;
+    }
+    
+    .buscador {
+      display: flex;
+      align-items: center;
+    }
+    
+    .input-group-append {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    
+    .buscador2 {
+      height: 2rem; /* 2.5rem - 20% */
+      border-radius: 1.2rem; /* 1.5rem - 20% */
+    }
+    nav {
+      width: 100%; 
+      display: flex;
+      margin-top: 0;
+      height: 2.4rem; 
+      justify-content: center;
+      background-color: rgb(203, 0, 0) !important;
+    }
+    .yellow:hover {
+      border-radius: 6.4px; /* 8px - 20% */
+      background-color: rgba(255, 255, 0, 0.574); /* Adjusted alpha value for visual effect */
+    }
+    
+    .nav-item .dropdown:hover {
+      border-radius: 6.4px; /* 8px - 20% */
+      background-color: rgba(255, 255, 0, 0.574); /* Adjusted alpha value for visual effect */
+    }
+    li {
+      font-size: 0.8rem; /* 1rem - 20% */
+      padding-left: 0.48rem; /* 0.6rem - 20% */
+      padding-right: 0.48rem; /* 0.6rem - 20% */
+    }
+    .nav-link{
+      font-size: 0.8rem;
+      padding: 0.6rem;
+    }
 }
+@media (max-width:991px){
+  .navbarFull {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 999;
+    margin:0
+  }
+  .mosaicoUno{
+      background-color: red;
+      display: flex;
+      height:6rem;
+      justify-content:space-evenly ;
+      align-items: center;
+      width: 100%;
+  }
+  .logo {
+      width: 12rem;
+      height: 100%;
+      justify-content: flex-start;
+      margin-left: 10px;
+      align-items: center;
+      position: relative;
+      top: 1px;
+      bottom: 1px;
+    }
+  .buscador{
+      visibility: hidden;
+  }
+  .logos {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .redes {
+      display: flex;
+      margin-right: 0px; /* 1rem - 20% */
+    }
+    
+    .logoRedes:hover {
+      color: yellow !important;
+    }
+    nav{
+      width: 100%;
+      background-color: red;
+      height: 100%;
+    }
 
-.mosaico1 {
-  background-color: red;
-  display: flex;
-  height: 7.2rem;
-  justify-content: space-between;
-}
-
-.logos {
-  display: flex;
-  align-items: center;
-  padding-right: 6.4rem; /* 8rem - 20% */
-}
-
-.redes {
-  display: flex;
-  padding-right: 0.8rem; /* 1rem - 20% */
-}
-
-.logoRedes:hover {
-  color: yellow !important;
-}
-
-.logo {
-  height: 6.96rem; /* 8.7rem - 20% */
-  width: 16.8rem; /* 21rem - 20% */
-  justify-content: flex-start;
-  margin-left: 6.4rem; /* 8rem - 20% */
-  position: relative;
-  top: 2px;
-  bottom: 2px;
-}
-
-.buscador {
-  display: flex;
-  align-items: center;
-}
-
-.input-group-append {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.buscador2 {
-  height: 2rem; /* 2.5rem - 20% */
-  border-radius: 1.2rem; /* 1.5rem - 20% */
-}
-
-nav {
-  width: 100%; /* 100% - 20% */
-  display: flex;
-  height: 2.4rem; /* 3rem - 20% */
-  justify-content: center;
-}
-
-.yellow:hover {
-  border-radius: 6.4px; /* 8px - 20% */
-  background-color: rgba(255, 255, 0, 0.574); /* Adjusted alpha value for visual effect */
-}
-
-.nav-item .dropdown:hover {
-  border-radius: 6.4px; /* 8px - 20% */
-  background-color: rgba(255, 255, 0, 0.574); /* Adjusted alpha value for visual effect */
-}
-
-li {
-  font-size: 0.8rem; /* 1rem - 20% */
-  padding-left: 0.48rem; /* 0.6rem - 20% */
-  padding-right: 0.48rem; /* 0.6rem - 20% */
-}
-
-.mosaico {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(203, 0, 0) !important;
-}
-
-.navbar-nav {
-  display: flex;
-  justify-content: center !important;
-  border: none;
-  align-items: center;
-}
-
-.nav-item:hover .dropdown-menu {
-  display: block;
-  background-color: rgb(203, 0, 0);
-}
-
-.navbar-nav .dropdown-menu {
-  width: 100vw !important; /* 100vw - 20% */
-  left: -61.5rem !important; /* -79rem - 20% */
-  right: auto !important;
-  border-radius: 0 !important;
 }
