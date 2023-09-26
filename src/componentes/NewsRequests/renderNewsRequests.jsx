@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import News from "../NewsListContainer/News";
-import Loader from "../loaders/Loader";
+
 
 function RenderNewsRequests() {
   let word = useParams()
@@ -34,7 +34,7 @@ function RenderNewsRequests() {
     <div className='row' style={{marginTop:'14rem', margin: '0px' }}>
       {news.length === 0 ? (
         // Mostrar el loader aquí
-        <div style={{marginTop:'0px', position:'relative', left:'550px'}}><Loader/></div>
+        <div style={{marginTop:'0px', position:'relative', left:'550px'}}> <h2>CARGANDO...</h2> </div>
       ) : (
         // Mostrar las noticias
         news.data.map((newsDocument) => (
