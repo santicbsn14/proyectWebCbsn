@@ -13,7 +13,7 @@ export const getNews = async () => {
 export const getSingleNews = async (id) => 
 {
   try {
-    const response = await fetch(`https://apicbsn-odvs-dev.fl0.io//api/news/${id}`);
+    const response = await fetch(`https://apicbsn-odvs-dev.fl0.io/api/news/${id}`);
     if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.status}`);
     }
