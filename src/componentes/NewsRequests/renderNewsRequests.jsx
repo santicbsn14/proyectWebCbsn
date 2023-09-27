@@ -9,7 +9,7 @@ function RenderNewsRequests() {
   const [news, setnews] = useState([])
   const requestNews = async () => {
     try {
-      const response = await fetch(`https://apicbsn-odvs-dev.fl0.io/api/news/title?title=${results}`);
+      const response = await fetch(`http://localhost:8083/api/news/title?title=${results}`);
       if (response.ok) {
         // Handle successful response
         const newsData = await response.json();

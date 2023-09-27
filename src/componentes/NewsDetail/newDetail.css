@@ -1,0 +1,46 @@
+.containerNewdetail{
+    padding-top: 10rem;
+    margin: auto;
+}
+@media(max-width:1100px){
+    .containerNewdetail{
+        padding-top: 12rem;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .probando{
+        height: 100%;
+        padding-top: 13rem;
+        width: 100%;
+    }
+    .image-viewer {
+        position: relative;
+      }
+      
+      .btn-close {
+        position: absolute;
+        bottom: 4rem;/* Ajusta la posición superior según sea necesario */
+        right: 10px; /* Ajusta la posición derecha según sea necesario */
+        z-index: 1000; /* Ajusta el índice Z para que esté por encima de las imágenes */
+        background-color: red; /* Cambia el color de fondo según sea necesario */
+        padding: 5px 10px; /* Ajusta el espaciado del botón según sea necesario */
+        border: 1px solid black; /* Agrega un borde al botón según sea necesario */
+        cursor: pointer;
+      }
+}
+/* Agrega estas reglas de estilo CSS en tu archivo de estilos (newDetail.css) */
+.image-viewer {
+    position: relative;
+  }
+  
+  .btn-close {
+    position: absolute;
+    top: -10rem; /* Ajusta la posición superior según sea necesario */
+    right: 10px; /* Ajusta la posición derecha según sea necesario */
+    z-index: 1000; /* Ajusta el índice Z para que esté por encima de las imágenes */
+    background-color: red; /* Cambia el color de fondo según sea necesario */
+    padding: 5px 10px; /* Ajusta el espaciado del botón según sea necesario */
+    border: 1px solid black; /* Agrega un borde al botón según sea necesario */
+    cursor: pointer;
+  }
