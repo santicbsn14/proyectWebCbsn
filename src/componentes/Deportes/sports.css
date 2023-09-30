@@ -15,7 +15,7 @@
 }
 
 .portadaBs{
-  width: 84.24rem !important;
+  width: 100% !important;
   height: 500px !important;
   display: block !important;
   object-fit: fill !important;
@@ -55,6 +55,3 @@ p {
   padding-bottom: 2.6px !important;
 }
 
-.container {
-  margin-left: 6.4rem!important;
-}

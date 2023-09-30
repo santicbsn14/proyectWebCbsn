@@ -6,9 +6,9 @@ function Ajedrez(){
     return(
     <main className='mainSports' style={{paddingTop:'8rem'}}>  
     <img src={ajedrezPort} className="portadaBs col-lg-12 " alt="portadaBas" />
-    <section className="container" >
+    <section className="container-fluid" >
     <div className="row">
-      <div className="accordion col-lg-6" id="accordionExample">
+      <div className="accordion contenedor col-lg-6" id="accordionExample">
             <h4 className="">Horarios</h4>
             <div className="accordion-item ">
                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 

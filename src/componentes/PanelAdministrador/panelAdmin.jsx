@@ -306,7 +306,7 @@ let notifyError = ()=>{
                   <h4>Editar noticia ingresando ID</h4>
                   <form className="row formularioCon" onSubmit={handleSubmit}>
                   <label htmlFor="newsIdToDelete" className="form-label">
-                        ID de Noticia a Eliminar
+                        ID de Noticia a Editar
                       </label>
                       <input
                         type="text"

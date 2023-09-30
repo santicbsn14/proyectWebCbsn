@@ -11,7 +11,7 @@ function News(props) {
         <h5 className="card-title" style={{color:'red'}}>{props.title}</h5>
           <p className="card-text" style={{fontSize:'0.64rem'}}>{props.description} </p>
           <Link to={url}>
-          <button className="btn btnCards" > Go somewhere</button>
+          <button className="btn btnCards" > Ver novedad</button>
           </Link>
          </div>
        </div>
