@@ -8,7 +8,7 @@ function Primaria(){
     return(
     <main className="mainSports" style={{marginTop:'8rem'}}>
       <img src={portPrimaria} className="portadaBs col-lg-12 " alt="portadaBas" style={{paddingTop: '10rem' }}/>
-    <section className="container" >
+    <section className="container-fluid" >
     <div className="row">
     <div  className=" contenedor col-lg-6 row g-3" style={{fontSize:'12px', marginTop:'14px'}}>
         <h4 >Espacios</h4>

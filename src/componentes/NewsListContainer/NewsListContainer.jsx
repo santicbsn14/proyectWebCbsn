@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { getNews } from "../MockService/newsRepository";
 
 import NewsList from "./NewsList.jsx";
+import Loader from "../Loader/loader.jsx";
 function NewsListContainer() {
     const [news, setNews] = useState(null)
     
@@ -23,8 +24,8 @@ function NewsListContainer() {
   }, []);
  
     return (
-      <div className="container-fluid" >
-       {news ? <NewsList news={news}/>: <div style={{margin:'0px', position:'relative'}}> <h2>CARGANDO...</h2></div>}
+      <div className="container-fluid" style={{margin:'0px'}}>
+       {news ? <NewsList news={news}/>: <Loader/>}
        </div>
     )
       
