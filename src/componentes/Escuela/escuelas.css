@@ -2,20 +2,12 @@
 .titulo{
     color: red;
 }
-.accordion{
-  width: 800px;
-  padding-bottom: 30px;
-  padding-top: 30px;
-}
- :hover .accordion-button{
-  color: black;
-}
 .contenedorUno{
   display: flex;
   justify-content: space-between;
 }
 .portadaBs{
-  width: 84.24rem !important;
+  width: 100% !important;
   height: 500px !important;
   display: block !important;
   object-fit: fill !important;
@@ -40,6 +32,42 @@ h4{
   padding-left: 100px;
   padding-right: 100px;
 }
-.container{
-  margin-left: 8rem;
+.contenedor{
+  margin-left: 110px;
+}
+.textosPie{
+  width: 33rem;
+}
+@media(max-width:990px){
+  .titulo{
+    color: red;
+}
+.portadaBs{
+  width: 100% !important;
+  height: 40% !important;
+  display: block !important;
+  object-fit: fill !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  left: 0px !important;
+}
+.fotosCamping{
+  width: 100%;
+  height: 20rem;
+}
+h4{
+  font-size: 26px;
+  color: red;
+}
+.formulario{
+  width: 500px;
+  padding-bottom: 30px;
+}
+.textosPie{
+  width: 100%;
+}
+.contenedor{
+  margin-left: 0px;
+}
 }

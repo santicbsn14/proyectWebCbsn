@@ -1,4 +1,6 @@
 .env
+newsRepositry.js
+Auth.js
 # Logs
 logs
 *.log
