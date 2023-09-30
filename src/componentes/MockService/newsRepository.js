@@ -55,22 +55,9 @@ export const getNews = async () => {
           if (!response.ok) {
               throw new Error(`Network response was not ok: ${response.status}`);
           }
-          return response.json()
-  } catch (error) {
-      throw new Error(`There was a problem with the fetch operation: ${error.message}`);
-  }
-  }
-
-  export const deleteNews = async (id) =>
-  {
-      try
-      {
-          const response = await fetch(`https://apicbsn-odvs-dev.fl0.io//api/news/${id}`,{
-          method:'DELETE',
-          headers: {
-              'Content-Type': 'application/json',
-            }
-          })
-          if (!response.ok) {
-              throw new Error(`Network response was not ok: ${response.status}`);
-
+        }
+    catch (error)
+    {
+        throw new Error(`There was a problem with the fetch operation: ${error.message}`);
+    }
+ }
