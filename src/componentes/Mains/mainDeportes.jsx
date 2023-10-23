@@ -3,12 +3,22 @@ import './main.css';
 import voleyMain from '../imagenes/voley_main.webp'
 import zumbaMain from '../imagenes/zumba_main.webp'
 import futsalMain from '../imagenes/futsal_main.webp'
-import futbolMain from '../imagenes/futbol_main.webp'
+import futbolMain from '../imagenes/futbol_main.webp' 
 import basquetMain from '../imagenes/basquet_main.webp'
 import ajedrezMain from '../imagenes/ajedrez_main.webp'
 import gimnasiaAcuaticaMain from '../imagenes/gimnasia-acuatica-main.webp'
 import gimnasiaArtisticaMain from '../imagenes/gimnasia_artistica_main.webp'
 import efiMain from '../imagenes/efi_main.webp'
+import taekwondoMain from '../imagenes/taekwondo_main.webp'
+import karateMain from '../imagenes/karate_main.webp'
+import rugbyMain from '../imagenes/rugby_main.webp'
+import handballMain from '../imagenes/handball_main.webp'
+import yogaMain from '../imagenes/yoga_main.webp'
+import judoMain from '../imagenes/judo_main.webp'
+import patinMain from '../imagenes/patin_main.webp'
+import natacionMain from '../imagenes/natacion_main.webp'
+import hockeyMain from '../imagenes/hockey_main.webp'
+import gimnasioMain from '../imagenes/gimnasio_main.webp'
 import { Link } from "react-router-dom";
 function MainSports(){
     return(
@@ -57,6 +67,56 @@ function MainSports(){
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/basquet'> 
                 <img src={gimnasiaArtisticaMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={gimnasioMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={rugbyMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={handballMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={taekwondoMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={karateMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={yogaMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={patinMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={natacionMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={hockeyMain} className="imgMain" alt="" />
+            </Link>
+            </div>
+            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
+            <Link to='/basquet'> 
+                <img src={judoMain} className="imgMain" alt="" />
             </Link>
             </div>
         </div>

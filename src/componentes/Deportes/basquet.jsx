@@ -12,34 +12,16 @@ function Basquet(){
             <h4 className="">Horarios</h4>
             <div className="accordion-item ">
                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
-                  INFANTILES
+                  Minibasquet
                </button>
                   <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
                         <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                        <h6>Dias: Martes-Viernes  Sede:Pellegrini</h6> <p>Profesores: Adrian Demichelis-Marcos Nardone-Diego Pontieri</p>
+                        <h6>Dias: Lunes-Miercoles-Viernes  Sede:Pellegrini</h6> <p>Profesores: Juan Ignacio Calcaterra- Ramiro Rolon-Rafael Calcaterra</p>
                           <ul className="list-group">
-                          <li className="list-group-item"> <strong>2017/2018:</strong> 18:00hs 19:00hs </li>
-                          <li className="list-group-item"> <strong>2014:</strong> 19:00hs a 20:00hs </li>
-                          <li className="list-group-item"> <strong> 2012:</strong> 20:00hs a 21:00hs </li>
-                        </ul>
-                        <h6>Dias: Jueves  Sede:Pellegrini</h6>  <p>Profesores: Adrian Demichelis-Marcos Nardone-Diego Pontieri</p>
-                        <ul className="list-group">
-                          <li className="list-group-item"> <strong>2015/2016:</strong> 18:00hs a 19:00hs </li>
-                          <li className="list-group-item"> <strong>2013:</strong> 19:00hs a 20:00hs </li>
-                          <li className="list-group-item"> <strong>2011:</strong> 20:00hs a 21:00hs </li>
-                        </ul>
-                        <h6>Dias: Martes-Viernes  Sede:Morteo</h6>  <p>Profesores: Adrian Demichelis-Marcos Nardone-Diego Pontieri</p>
-                        <ul className="list-group">
-                          <li className="list-group-item"> <strong>2015/2016:</strong> 18:00hs a 19:00hs </li>
-                          <li className="list-group-item"> <strong>2013:</strong> 19:00hs a 20:00hs </li>
-                          <li className="list-group-item"> <strong>2011:</strong> 20:00hs a 21:00hs </li>
-                        </ul>
-                        <h6>Dias: Jueves  Sede:Morteo</h6> <p>Profesores: Adrian Demichelis-Marcos Nardone-Diego Pontieri</p>
-                        <ul className="list-group">
-                          <li className="list-group-item"> <strong>2014:</strong> 19:00hs a 20:00hs </li>
-                          <li className="list-group-item"> <strong>2012:</strong> 20:00hs a 21:00hs </li>
-                          <p className="text-center"> <strong>Cuota deportiva + social: $2600 </strong></p>
+                          <li className="list-group-item"> <strong>Mosquitos</strong> 17:30hs 18:30hs </li>
+                          <li className="list-group-item"> <strong>Cebollitas-Premini</strong> 18:00hs a 19:00hs </li>
+                          <li className="list-group-item"> <strong> Mini-Sub 13</strong> 19:00hs a 20:00hs </li>
                         </ul>
                       </div>
                   </div>
@@ -51,14 +33,13 @@ function Basquet(){
                   <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
                       <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                      <h6>Dias: Días: Lunes–Martes –Miércoles–Jueves –Viernes (1 día de descanso)  Sede:Camping</h6> 
-                      <p>Profesores: Marcelo Ocanto-Jose Barraza-Ricardo Barrano-Fernando Lagorio-Daniel Huber-Roberto Cerino</p>
+                      <h6>Dias: Lunes–Miércoles–Viernes   Sede:Pellegrini</h6> 
+                      <p>Profesores: Rafael Calcaterra-Juan Ignacio Calcaterra-Lucas Mazzoni- Martin Blanco</p>
                       <ul className="list-group">
-                        <li className="list-group-item"></li>
-                        <li className="list-group-item"> <strong> 2010/2009</strong>: 18:00hs a 19:30hs </li>
-                        <li className="list-group-item"> <strong> 2008/2007</strong>: 18:00hs a 19:30hs </li>
-                        <li className="list-group-item"> <strong> 5ta/Sub23</strong>: 19:30hs a 21:00hs </li>
-                        <li className="list-group-item"> <strong>Cuota deportiva + social: $3050 </strong></li>
+                        <li className="list-group-item"><strong> Sub 15- Sub 17- Sub 19 Amarillo</strong>: 13:30hs a 15:30hs </li>
+                        <li className="list-group-item"> <strong>Sub 17- Sub 19 Rojo</strong>: 15:30hs a 17:30hs </li>
+                        <li className="list-group-item"> <strong> Sub 15-Juveniles femenino</strong>: 20:00hs a 21:00hs </li>
+                        <li className="list-group-item"> <strong> 1ra Femenina y 1ra Amarilla</strong>: 21:00hs a 22:00hs </li>
                       </ul>
                     </div>
                   </div>
@@ -71,9 +52,9 @@ function Basquet(){
                     <div className="accordion-body">
                       <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
                       <ul className="list-group">
-                        <h6>Dias: Días: lunes–Martes –Miércoles–Jueves –Viernes (1 día de descanso)  Sede:Camping</h6>
-                        <p> Cuerpo Tecnico: Daniel Huber- Fernando Lagorio- Jose Feroci </p>
-                        <li className="list-group-item"> <strong>1era:</strong> 19:30hs a 21:00hs</li>
+                        <h6>Equipo profesional de basquet </h6>
+                        <p> Cuerpo Tecnico: Martin Blanco- Lucas Mazzoni- Juan Ignacio Calcaterra </p>
+                        <li className="list-group-item">El plantel se entrena a lo largo de la semana, en el correr de la mañana, en el"Fortunato Bonelli", ajustando sus entrenamientos en relacion a su agenda de partidos.</li>
                       </ul>
                     </div>
                   </div>
@@ -99,11 +80,11 @@ function Basquet(){
   <div className="col-lg-12">
     <label htmlFor="inputState" className="form-label">Categoría</label>
     <select id="inputState" className="form-select">
-      <option value="Futbol Infantil">Futbol Infantil</option>
-      <option value="2007/2008">2007/2008</option>
-      <option value="2009/2010">2009/2010</option>
-      <option value="Quinta">Quinta</option>
-      <option value="Sub 23">Sub 23</option>
+      <option value="MiniBasquet">MiniBasquet</option>
+      <option value="Inferiores">Inferiores</option>
+      <option value="Primera Amarilla">Primera Amarilla</option>
+      <option value="Primera Femenina">Primera Femenina</option>
+      <option value="Equipo Profesional">Equipo Profesional</option>
     </select>
   </div>
   <div className="col-12">

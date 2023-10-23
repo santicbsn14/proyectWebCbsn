@@ -153,7 +153,7 @@ function NavBar(){
                   </div>
             </li>
             <li className="nav-item yellow d-none d-lg-block" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <Link to='/mainSports' className="nav-link" >
+            <Link to='/mainAreaSalud' className="nav-link" >
                   <strong className="btn-dark hover">Area de salud</strong>
                 </Link>
             </li>

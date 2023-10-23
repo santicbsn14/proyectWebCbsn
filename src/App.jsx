@@ -28,6 +28,8 @@ import Jardin from './componentes/Escuela/jardin.jsx';
 import Primaria from './componentes/Escuela/primario.jsx';
 import LoginPanelAdmin from './componentes/PanelAdministrador/loginForAdmin.jsx';
 import PanelAdmin from './componentes/PanelAdministrador/panelAdmin.jsx';
+import MainAreaSalud from './componentes/Mains/mainAreaSalud.jsx';
+import Morteo from './componentes/Instalaciones/morteo.jsx';
 
 
 
@@ -48,8 +50,10 @@ function App() {
       <Route path='/mainInstalaciones' element={<MainInstalaciones/>}/>
       <Route path='/camping' element={<Camping/>}/>
       <Route path='/sedePellegrini' element={<SedePellegrini/>}/>
+      <Route path='/morteo' element={<Morteo/>}/>
       <Route path="/mainEscuelas" element={<MainEscuelas/>}/>
       <Route path="/mainElCLub" element={<MainElClub/>}/>
+      <Route path="/mainAreaSalud" element={<MainAreaSalud/>}/>
       <Route path="/autoridades" element={<Autoridades/>}/>
       <Route path="/basquet" element={<Basquet/>}/>
       <Route path="/futbol" element={<Futbol/>}/>

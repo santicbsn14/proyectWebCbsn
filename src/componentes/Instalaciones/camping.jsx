@@ -4,7 +4,25 @@ import portCamping from '../imagenes/camping-port.webp'
 import espacioCamping from '../imagenes/foto-camping0.webp'
 import espacioCampingDos from '../imagenes/foto-camping1.webp'
 import espacioCampingTres from '../imagenes/foto-camping2.webp'
+import espacioCampingCuatro from '../imagenes/quinchocamp.webp'
+import espacioCampingCinco from '../imagenes/quinchocampdos.webp'
+import espacioCampingSeis from '../imagenes/padelcamp.webp'
+import espacioCampingSiete from '../imagenes/basquetcamp.webp'
+import { sendEmail } from "../MockService/newsRepository";
 function Camping(){
+  
+  function enviarFormulario(event) {
+    event.preventDefault();
+    
+    
+    const nombre = document.getElementById("inputEmail4").value;
+    const email = document.getElementById("inputPassword4").value;
+    const mensaje = document.getElementById("inputAddress2").value;
+    const motivo = document.getElementById("inputState").value;
+  
+    
+    sendEmail(nombre, email, mensaje, motivo);
+  }
     return(
     <main className="mainSports" style={{marginTop:'8rem'}}>
       <img src={portCamping} className="portadaBs col-lg-12 " alt="portadaBas" style={{marginTop:'8rem'}}/>
@@ -26,19 +44,31 @@ function Camping(){
             <div className="mx-auto" >
             <img className="fotosCamping" src={espacioCampingTres} alt="" />
             </div>
+            <div className="mx-auto" >
+            <img className="fotosCamping" src={espacioCampingCuatro} alt="" />
+            </div>
+            <div className="mx-auto" >
+            <img className="fotosCamping" src={espacioCampingCinco} alt="" />
+            </div>
+            <div className="mx-auto" >
+            <img className="fotosCamping" src={espacioCampingSeis} alt="" />
+            </div>
+            <div className="mx-auto" >
+            <img className="fotosCamping" src={espacioCampingSiete} alt="" />
+            </div>
       </div>
       
       
-      <form className=" col-lg-6 row g-3 formulario mx-auto" >
+      <form className=" col-lg-6 row g-3 formulario mx-auto" onSubmit={enviarFormulario} >
             <h4>Contactar Para Reservas</h4>
             <p>¡Obtendra una respuesta en la direccion del correo electronico que ingrese!</p>
             <div className="col-md-6">
               <label for="inputEmail4" className="form-label">Nombre</label>
-              <input type="email" className="form-control" id="inputEmail4"/> 
+              <input type="text" className="form-control" id="inputEmail4"/> 
             </div>
             <div className="col-md-6">
               <label for="inputPassword4" className="form-label">Email</label>
-              <input type="password" className="form-control" id="inputPassword4"/>
+              <input type="email" className="form-control" id="inputPassword4"/>
             </div>
             <div className="col-12">
               <label for="inputAddress2" className="form-label">Mensaje</label>
@@ -54,7 +84,7 @@ function Camping(){
               </select>
             </div>
             <div className="col-12">
-              <button type="submit" id="probando" onclick="mensajeenviado()" className="btn btn-primary">Enviar</button>
+              <button type="submit" id="probando"  className="btn btn-primary">Enviar</button>
             </div>
       </form>
       </div>

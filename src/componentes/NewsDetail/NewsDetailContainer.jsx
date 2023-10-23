@@ -8,25 +8,43 @@ function NewDetail() {
     let idparam = useParams()
     let id = idparam.id
     let [news, setNews] = useState(null)
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
     
     async function fetchNews() {
       try {
           const response = await getSingleNews(id); // Invoca la función getNews como una función
           setNews(response);
-          // Establece la respuesta directamente en el estado news
+          setLoading(false); 
           
       } catch (error) {
           console.error('There was a problem fetching news:', error);
+          setError("Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde.");
+          setLoading(false); // Cambia el estado de loading a false en caso de error
       }
   }
   useEffect(() => {
+    const timeout = setTimeout(() => {
+        // Si la solicitud tarda más de 10 segundos, muestra un mensaje de error
+        setError("La solicitud ha tardado demasiado. Por favor, inténtalo de nuevo más tarde.");
+        setLoading(false); // Cambia el estado de loading a false en caso de timeout
+      }, 10000); // Tiempo de espera de 10 segundos
+  
       fetchNews();
+      return () => clearTimeout(timeout);
   }, []);
    
   return (
-    <div className="container-fluid" style={{margin:'0px', marginTop:'5rem'}}>
-     {news ? <NewsDetail news={news}/>: <Loader/>}
-     </div>
+    <div className="container-fluid" style={{ margin: "0px" }}>
+    {loading ? (
+      <Loader />
+    ) : news ? (
+      <NewsDetail news={news} />
+    ) : (
+      <div>{error}</div>
+    )}
+  </div>
   )
 }
 

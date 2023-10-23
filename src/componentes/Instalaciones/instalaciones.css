@@ -2,11 +2,6 @@
 .titulo{
     color: red;
 }
-.accordion{
-  width: 800px;
-  padding-bottom: 30px;
-  padding-top: 30px;
-}
  :hover .accordion-button{
   color: black;
 }
@@ -15,7 +10,7 @@
   justify-content: space-between;
 }
 .portadaBs{
-  width: 84.24rem !important;
+  width: 100% !important;
   height: 500px !important;
   display: block !important;
   object-fit: fill !important;
@@ -34,7 +29,7 @@ h4{
 }
 .formulario{
   width: 500px;
-  padding-bottom: 30px;
+  height: 100px !important;
 }
 .textoIntro{
   padding-left: 100px;
@@ -43,6 +38,11 @@ h4{
 .container{
   margin-left: 8rem;
 }
-@media(max-width:1050px){
-  
+.mainSports{
+  margin-bottom: 20rem;
+}
+@media(max-width:767px){
+  .mainSports{
+    margin-bottom: 30crem !important;
+  }
 }
