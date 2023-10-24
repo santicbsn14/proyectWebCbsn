@@ -1,6 +1,6 @@
 export const getNews = async () => {
   try {
-      const response = await fetch('http://localhost:8083/api/news/?limit=4');
+      const response = await fetch('https://apicbsn-odvs-dev.fl0.io/api/news/?limit=4');
       if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.status}`);
       }
@@ -13,7 +13,7 @@ export const getNews = async () => {
 export const getSingleNews = async (id) => 
 {
   try {
-    const response = await fetch(`http://localhost:8083/api/news/${id}`);
+    const response = await fetch(`https://apicbsn-odvs-dev.fl0.io/api/news/${id}`);
     if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.status}`);
     }
