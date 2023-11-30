@@ -6,7 +6,7 @@ export const loginForAdmin = async (email, password) => {
         password: password,
       };
   
-      const response = await fetch('http://localhost:8083/api/session/login', {
+      const response = await fetch('https://apicbsn-dev-krgf.2.us-1.fl0.io/api/session/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // Indica que estás enviando datos en formato JSON
@@ -36,7 +36,7 @@ export const loginForAdmin = async (email, password) => {
         'Authorization': accessToken
       };
       
-      const response = await fetch(`http://localhost:8083/api/session/current`, {
+      const response = await fetch(`https://apicbsn-dev-krgf.2.us-1.fl0.io/api/session/current`, {
         method: 'GET',
         headers: headers,
         credentials: 'include'
