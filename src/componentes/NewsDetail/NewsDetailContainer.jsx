@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getSingleNews } from "../MockService/newsRepository";
+import { getPostById } from "../../client.js";
 import NewsDetail from "./NewsDetail.jsx";
 import Loader from "../Loader/loader.jsx";
 
-function NewDetail() {
-    let idparam = useParams()
-    let id = idparam.id
+function NewsDetailContainer() {
+    let {id} = useParams()
+   
+    
     let [news, setNews] = useState(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -14,7 +16,7 @@ function NewDetail() {
     
     async function fetchNews() {
       try {
-          const response = await getSingleNews(id); // Invoca la función getNews como una función
+          const response = await getPostById(id); // Invoca la función getNews como una función
           setNews(response);
           setLoading(false); 
           
@@ -33,7 +35,7 @@ function NewDetail() {
   
       fetchNews();
       return () => clearTimeout(timeout);
-  }, []);
+  }, [id]);
    
   return (
     <div className="container-fluid" style={{ margin: "0px" }}>
@@ -48,4 +50,4 @@ function NewDetail() {
   )
 }
 
-export default NewDetail;
+export default NewsDetailContainer;

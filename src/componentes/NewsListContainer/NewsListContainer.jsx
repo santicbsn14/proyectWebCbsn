@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getNews } from "../MockService/newsRepository";
+import { getPosts } from "../../client.js";
 import NewsList from "./NewsList.jsx";
 import Loader from "../Loader/loader.jsx";
 
@@ -10,7 +11,8 @@ function NewsListContainer() {
 
   async function fetchNews() {
     try {
-      const response = await getNews();
+      const response = await getPosts();
+    
       setNews(response);
       setLoading(false)
     } catch (error) {

@@ -5,12 +5,15 @@ import { es } from "date-fns/locale";
 import './newDetail.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTags } from '@fortawesome/free-solid-svg-icons'
+import { urlFor } from "../../client";
 
-function NewsDetail({ news }) {
-  const fecha = new Date(news.data.newsDatetime);
+function NewsDetail({ news}) {
+
+  
+  const fecha = new Date(news.newsDatetime);
   const formatoDeseado = "dd 'de' MMMM 'de' yyyy";
   const fechaFormateada = format(fecha, formatoDeseado, { locale: es });
-
+  
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
@@ -28,28 +31,28 @@ function NewsDetail({ news }) {
     <section className="container containerNewdetail">
       <div className="row probando">
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <h1><strong className="mx-auto">{news.data.title}</strong></h1>
+          <h1><strong className="mx-auto">{news.title}</strong></h1>
           <div style={{ fontSize: '10px' }}>{fechaFormateada}</div>
           <hr className="mb-2 mb-md-3" />
           <div style={{ display: 'flex' }}>
-            <span style={{ backgroundColor: 'rgb(203, 0, 0)', height: '20px', color: 'yellow', borderRadius: '3px' }}>{news.data.category}</span>
-            {news.data.topics.map((topic) => {
+            <span style={{ backgroundColor: 'rgb(203, 0, 0)', height: '20px', color: 'yellow', borderRadius: '3px' }}>{news.category}</span>
+            {news.topics.map((topic) => {
               return <p style={{ padding: '3px' }}><FontAwesomeIcon style={{ color: 'rgb(203, 0, 0)' }} icon={faTags} beatFade /> {topic}</p>
             })}
           </div>
           <hr className="mb-2 mb-md-3" />
-          <p> <strong>{news.data.description}</strong></p>
+          <p> <strong>{news.description}</strong></p>
           <div style={{ fontSize: '12px' }} className="col-lg-12 col-md-12 col-sm-12">
-            {news.data.newsBody}
+            {news.newsBody}
           </div>
         </div>
         <div className="row" style={{ marginTop: "40px" }}>
-          {news.data.imgs.map((imagen, index) => {
+          {news.imagenes.map((imagen, index) => {
             return (
               <img
                 className="col-lg-4"
                 key={index}
-                src={imagen}
+                src={urlFor(imagen)}
                 style={{
                   width: "9.375rem",
                   height: "9.375rem",
@@ -68,7 +71,7 @@ function NewsDetail({ news }) {
       {isViewerOpen && (
         <div className="image-viewer">
           <ImageViewer
-            src={news.data.imgs}
+            src={news.imagenes.map(imagen => urlFor(imagen))}
             currentIndex={currentImage}
             onClose={closeImageViewer}
           />
