@@ -30,12 +30,22 @@ import LoginPanelAdmin from './componentes/PanelAdministrador/loginForAdmin.jsx'
 import PanelAdmin from './componentes/PanelAdministrador/panelAdmin.jsx';
 import MainAreaSalud from './componentes/Mains/mainAreaSalud.jsx';
 import Morteo from './componentes/Instalaciones/morteo.jsx';
+import Rugby from './componentes/Deportes/rugby.jsx';
+import Gimnasio from './componentes/Deportes/gimnasio.jsx';
+import Voley from './componentes/Deportes/voley.jsx';
+import Handball from './componentes/Deportes/handball.jsx';
+import Yoga from './componentes/Deportes/yoga.jsx';
+import Hockey from './componentes/Deportes/hockey.jsx';
+import Taekwondo from './componentes/Deportes/taekwondo.jsx';
+import Judo from './componentes/Deportes/judo.jsx';
+import Natacion from './componentes/Deportes/natacion.jsx';
 
 
 
 
 function App() {
   const keyPanel = import.meta.env.VITE_REACT_APP_KEY_PANEL
+  
   return (
     <div className='app'>
       <BrowserRouter>
@@ -56,11 +66,20 @@ function App() {
       <Route path="/mainAreaSalud" element={<MainAreaSalud/>}/>
       <Route path="/autoridades" element={<Autoridades/>}/>
       <Route path="/basquet" element={<Basquet/>}/>
+      <Route path="/judo" element={<Judo/>}/>
       <Route path="/futbol" element={<Futbol/>}/>
       <Route path="/ajedrez" element={<Ajedrez/>}/>
+      <Route path="/taekwondo" element={<Taekwondo/>}/>
+      <Route path="/natacion" element={<Natacion/>}/>
+      <Route path="/handball" element={<Handball/>}/>
+      <Route path="/rugby" element={<Rugby/>}/>
+      <Route path="/hockey" element={<Hockey/>}/>
+      <Route path="/voley" element={<Voley/>}/>
+      <Route path="/gimnasio" element={<Gimnasio/>}/>
       <Route path="/gimnasiaAcuatica" element={<GimnasiaAcuatica/>}/>
       <Route path="/gimnasiaArtistica" element={<GimnasiaArtistica/>}/>
       <Route path="/zumba" element={<Zumba/>}/>
+      <Route path="/yoga" element={<Yoga/>}/>
       <Route path="/futsal" element={<Futsal/>}/>
       <Route path="/EFI" element={<EFI/>}/>
       <Route path="/jardin" element={<Jardin/>}/>

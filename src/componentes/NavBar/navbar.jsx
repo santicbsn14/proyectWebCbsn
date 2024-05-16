@@ -42,7 +42,8 @@ function NavBar(){
 
     const searchTerm = input.value;
 
-   redirectionResults(searchTerm)
+    const encodedWord = encodeURIComponent(searchTerm);
+   redirectionResults(encodedWord)
   };
 
     return (

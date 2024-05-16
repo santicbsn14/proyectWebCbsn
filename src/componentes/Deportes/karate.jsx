@@ -4,7 +4,7 @@ import karatePort from '../imagenes/karate_port.webp'
 import './sports.css'
 function Karate(){
     return(
-    <main className='mainSports' style={{paddingTop:'8rem'}}>  
+    <main className='mainSports' style={{marginTop:'8rem'}}>  
     <img src={karatePort} className="portadaBs col-lg-12 " alt="portadaBas" />
     <section className="container-fluid" >
     <div className="row">

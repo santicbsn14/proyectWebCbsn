@@ -17,46 +17,42 @@ function EFI(){
                   <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
                         <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                        <h6>Dias: Martes-Jueves  Sede:Pellegrini</h6> <p></p>
+                        <h6>Dias: Lunes-Miercoles  Sede:Pellegrini</h6> <p></p>
                           <ul className="list-group">
-                          <li className="list-group-item"> <strong>Para niños de 3 a 5 años:</strong> 18:00hs 18:45hs </li>
+                          <li className="list-group-item"> <strong>Para niños de 3 a 5 años:</strong> 17:30hs 18:15hs </li>
                         </ul>
                       </div>
                   </div>
             </div>
       </div>
-      
       <form className="col-lg-6 row g-3 formulario mx-auto">
-  <h4>Contactar con profesores</h4>
-  <p>¡Obtendrá una respuesta en la dirección de correo electrónico que ingrese!</p>
-  <div className="col-md-6">
-    <label htmlFor="inputEmail4" className="form-label">Nombre</label>
-    <input type="text" className="form-control" id="inputEmail4" />
-  </div>
-  <div className="col-md-6">
-    <label htmlFor="inputPassword4" className="form-label">Email</label>
-    <input type="email" className="form-control" id="inputPassword4" />
-  </div>
-  <div className="col-12">
-    <label htmlFor="inputAddress2" className="form-label">Mensaje</label>
-    <input type="text" className="form-control" style={{ height: '64px' }} id="inputAddress2" />
-  </div>
-  <div className="col-lg-12">
-    <label htmlFor="inputState" className="form-label">Categoría</label>
-    <select id="inputState" className="form-select">
-      <option value="Niños de 3 a 5 años">Niños de 3 a 5 años</option>
-    </select>
-  </div>
-  <div className="col-12">
-    <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
-  </div>
-</form>
-
-          
-            </div> 
-
-  </section>
-      </main>
+        <h4>Contactar con profesores</h4>
+            <p>¡Obtendrá una respuesta en la dirección de correo electrónico que ingrese!</p>
+             <div className="col-md-6">
+              <label htmlFor="inputEmail4" className="form-label">Nombre</label>
+              <input type="text" className="form-control" id="inputEmail4" />
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="inputPassword4" className="form-label">Email</label>
+              <input type="email" className="form-control" id="inputPassword4" />
+            </div>
+            <div className="col-12">
+              <label htmlFor="inputAddress2" className="form-label">Mensaje</label>
+              <input type="text" className="form-control" style={{ height: '64px' }} id="inputAddress2" />
+            </div>
+            <div className="col-lg-12">
+              <label htmlFor="inputState" className="form-label">Categoría</label>
+              <select id="inputState" className="form-select">
+                <option value="Zumba y ritmos">Niños de 3 a 5 años</option>
+              </select>
+            </div>
+           <div className="col-12">
+             <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
+            </div>
+      </form>
+    </div>
+    </section>
+    </main>
     )
 }
 export default EFI

@@ -35,7 +35,7 @@ function MainSports(){
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'>
+            <Link to='/voley'>
                 <img src={voleyMain} className="imgMain" alt="" />
             </Link>
             </div>
@@ -70,32 +70,32 @@ function MainSports(){
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
+            <Link to='/gimnasio'> 
                 <img src={gimnasioMain} className="imgMain" alt="" />
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
+            <Link to='/rugby'> 
                 <img src={rugbyMain} className="imgMain" alt="" />
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
+            <Link to='/handball'> 
                 <img src={handballMain} className="imgMain" alt="" />
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
+            <Link to='/taekwondo'> 
                 <img src={taekwondoMain} className="imgMain" alt="" />
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
+            <Link to='/karate'> 
                 <img src={karateMain} className="imgMain" alt="" />
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
+            <Link to='/yoga'> 
                 <img src={yogaMain} className="imgMain" alt="" />
             </Link>
             </div>
@@ -110,7 +110,7 @@ function MainSports(){
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
+            <Link to='/hockey'> 
                 <img src={hockeyMain} className="imgMain" alt="" />
             </Link>
             </div>

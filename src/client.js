@@ -14,8 +14,16 @@ export const client = createClient({
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getPosts() {
   const posts = await client.fetch('*[_type == "novedad"]')
+  
   return posts
 }
+
+export async function getPostBySearch(title) {
+  const posts = await client.fetch(`*[_type == "novedad" && title match "${title}"] `)
+  
+  return posts
+}
+
 export async function getPostById(id) {
   
     const post = await client.getDocument(id)
