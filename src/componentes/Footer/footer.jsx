@@ -1,7 +1,7 @@
 import React from "react";
 import './footer.css';
-import escudoyletra from '../imagenes/escudo_y_letra.png'
-import telefono from "../imagenes/0336-4454540.png"
+import escudoyletra from '../imagenes/escudo_y_letra.webp'
+import telefono from "../imagenes/telefonoClub.webp"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook,faYoutube, faInstagram, faWhatsapp} from  '@fortawesome/free-brands-svg-icons'
 function Footer(){
@@ -29,9 +29,9 @@ function Footer(){
                <div className="iconosRedes">
                {/* <p >Encontranos en nuestras redes sociales:</p> */}
            <a href='https://api.whatsapp.com/send?phone=%2B543364322466&text=' target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon className="iconosRedes" icon={faWhatsapp} style={iconStyle}  /></a>
-            <a href="http://" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="iconosRedes"  icon={faYoutube} style={iconStyle} /></a>
-            <a href="http://" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="iconosRedes"  icon={faFacebook} style={iconStyle} /></a>
-            <a href="http://" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="iconosRedes"  icon={faInstagram} style={iconStyle} /> </a>
+            <a href="https://www.youtube.com/@cbsnbelgranosannicolas6722" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="iconosRedes"  icon={faYoutube} style={iconStyle} /></a>
+            <a href="https://www.facebook.com/CBSNoficial" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="iconosRedes"  icon={faFacebook} style={iconStyle} /></a>
+            <a href="https://www.instagram.com/cbsnoficial/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="iconosRedes"  icon={faInstagram} style={iconStyle} /> </a>
                </div>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import './main.css';
 import {Link} from 'react-router-dom'
 import jardinMain from '../imagenes/jardin_main.webp';
@@ -19,7 +18,7 @@ function MainEscuelas(){
                 </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-                <Link to='/autoridades'>
+                <Link to='/secundaria'>
                     <img src={secundariaMain} className="imgMain" alt="" />
                 </Link>
             </div>

@@ -64,6 +64,7 @@ function Futbol(){
               <label htmlFor="inputState" className="form-label">Categoría</label>
                  <select id="inputState" className="form-select">
                    <option value="Futbol Infantil">Futbol Infantil</option>
+                   <option value="Futbol Infantil">Inferiores</option>
                  </select>
             </div>
             <div className="col-12">

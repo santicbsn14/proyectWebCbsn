@@ -6,6 +6,10 @@
   display: flex;
   justify-content: space-between;
 }
+.introText{
+  font-size: 13px !important;
+  margin-top: 0px;
+}
 .portadaBs{
   width: 100% !important;
   height: 500px !important;

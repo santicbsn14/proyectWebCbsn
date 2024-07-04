@@ -1,6 +1,6 @@
 import React from "react";
 import './instalaciones.css'
-import portCamping from '../imagenes/camping4.jpg'
+import portCamping from '../imagenes/camping-port.webp'
 import espacioCamping from '../imagenes/foto-camping0.webp'
 import espacioCampingDos from '../imagenes/foto-camping1.webp'
 import espacioCampingTres from '../imagenes/foto-camping2.webp'

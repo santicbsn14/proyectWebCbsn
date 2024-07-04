@@ -12,7 +12,7 @@ function NewsListContainer() {
   async function fetchNews() {
     try {
       const response = await getPosts();
-    
+
       setNews(response);
       setLoading(false)
     } catch (error) {
@@ -21,7 +21,7 @@ function NewsListContainer() {
       setLoading(false); // Cambia el estado de loading a false en caso de error
     }
   }
-  
+
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -30,20 +30,20 @@ function NewsListContainer() {
     }, 5000); // Tiempo de espera de 10 segundos
 
     fetchNews();
-    
+
     return () => clearTimeout(timeout); // Limpia el timeout si el componente se desmonta antes de que se complete
   }, []);
 
   return (
-       <div className="container-fluid" style={{ margin: "0px" }}>
-         {loading ? (
-           <Loader />
-         ) : news ? (
-           <NewsList news={news} />
-         ) : (
-           <div>{error}</div>
-         )}
-       </div>
+    <div className="container-fluid" style={{ margin: "0px" }}>
+      {loading ? (
+        <Loader />
+      ) : news ? (
+        <NewsList news={news} />
+      ) : (
+        <div>{error}</div>
+      )}
+    </div>
 
   );
 }

@@ -28,7 +28,7 @@ function RenderNewsRequests() {
 
   useEffect(() => {
     requestNews();
-  }, []);
+  }, [word]);
 
   return (
     <div className="row" style={{ marginTop: "14rem", margin: "0px" }}>
@@ -39,7 +39,7 @@ function RenderNewsRequests() {
         </div>
       ) : news.length === 0 ? (
         // Mostrar mensaje de que no se encontraron noticias
-        <h4 style={{marginTop:'20rem'}}>¡No se encontraron noticias</h4>
+        <h4 style={{marginTop:'20rem'}}>¡No se encontraron noticias!</h4>
       ) : (
         // Mostrar las noticias
         news.map((newsDocument) => (

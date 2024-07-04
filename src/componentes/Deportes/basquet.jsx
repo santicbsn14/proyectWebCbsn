@@ -1,6 +1,6 @@
 import React from "react";
 import './sports.css'
-import portBasquet from '../imagenes/portbasquettest.jpg'
+import portBasquet from '../imagenes/port-basquet.webp'
 import logoNuevo from '../imagenes/logoNuevo.jpg'
 function Basquet(){
     return(

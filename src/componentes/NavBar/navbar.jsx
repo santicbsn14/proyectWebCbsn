@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import escudoyletra from '../imagenes/escudo_y_letra.png'
+import escudoyletra from '../imagenes/escudo_y_letra.webp'
 import "./navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook,faYoutube, faTwitter,faInstagram, faWhatsapp} from  '@fortawesome/free-brands-svg-icons';
@@ -54,11 +54,18 @@ function NavBar(){
                 <img src={escudoyletra} className='logo' alt="" />
                 <div className="logos">
                     <div className="redes">
-                        <FontAwesomeIcon className="logoRedes" icon={faWhatsapp} style={iconStyle} />
-                        <FontAwesomeIcon className="logoRedes" icon={faFacebook} style={iconStyle} />
-                        <FontAwesomeIcon className="logoRedes" icon={faYoutube} style={iconStyle} />
-                        <FontAwesomeIcon className="logoRedes" icon={faTwitter} style={iconStyle} />
-                        <FontAwesomeIcon className="logoRedes" icon={faInstagram} style={iconStyle} />
+                    <a href='https://api.whatsapp.com/send?phone=%2B543364322466&text=' target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon className="logoRedes" icon={faWhatsapp} style={iconStyle} />
+                    </a>
+                    <a href="https://www.facebook.com/CBSNoficial" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="logoRedes" icon={faFacebook} style={iconStyle} />
+                    </a>
+                    <a href="https://www.youtube.com/@cbsnbelgranosannicolas6722" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="logoRedes" icon={faYoutube} style={iconStyle} />
+                    </a>
+                    <a href="https://www.instagram.com/cbsnoficial/" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon className="logoRedes" icon={faInstagram} style={iconStyle} />
+                    </a>
                     </div>
                 <form className="d-flex buscador" onSubmit={handleFormSubmit} role="search" >
                     <input className="form-control bg-dark text-light border-dark buscador2 me-2" type="search" placeholder="Search" aria-label="Search" />

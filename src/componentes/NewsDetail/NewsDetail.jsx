@@ -7,13 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTags } from '@fortawesome/free-solid-svg-icons'
 import { urlFor } from "../../client";
 
-function NewsDetail({ news}) {
+function NewsDetail({ news }) {
 
-  
+
   const fecha = new Date(news.newsDatetime);
   const formatoDeseado = "dd 'de' MMMM 'de' yyyy";
   const fechaFormateada = format(fecha, formatoDeseado, { locale: es });
-  
+
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
@@ -51,6 +51,7 @@ function NewsDetail({ news}) {
             return (
               <img
                 className="col-lg-4"
+                loading="lazy"
                 key={index}
                 src={urlFor(imagen)}
                 style={{
