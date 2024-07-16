@@ -17,8 +17,8 @@ function Autoridades(){
         <div className="col-lg-4">
          <h4>Titulares</h4>
          <ul>
-          <li>Vice Presidente: Sr.Victor Arnone</li>
-          <li>2ºdo Vice Presidente: Sr. Jernoimo Galvan</li>
+          <li>Vice Presidente: Sr.Jernoimo Galvan</li>
+          <li>2ºdo Vice Presidente: Sr. Victor Arnone</li>
           <li>Secretario General: Dr. Pablo D'Adamo</li>
           <li>Secretario de actas: Sr. Martin Cagrandi</li>
           <li>Tesorero: Cdor. Sebastian Reviglio</li>
@@ -34,23 +34,23 @@ function Autoridades(){
         <div className="col-lg-4">
           <h4>Suplentes</h4>
           <ul>
-           <li>Vocal Suplente: Sr. Juan Manuel Viale</li>
-           <li>Vocal Suplente: Dr. Jose Pendino</li>
-           <li>Vocal Suplente: Sr. Javier Solis</li>
-           <li>Vocal Suplente: Sr. Juan C Acuña</li>
-           <li>Vocal Suplente: Sr. Diego Maggiori</li>
+           <li>Vocal Suplente: Sr. Juan Carlos Acuña</li>
+           <li>Vocal Suplente: Dr. Gustavo Zelayeta</li>
+           <li>Vocal Suplente: Sr. Leandro Ghio</li>
+           <li>Vocal Suplente: Sr. Pablo Mazzeo</li>
+           <li>Vocal Suplente: Sr. Jose Marti</li>
            <li>Vocal Suplente: Sr. Fernando Lopez del Sarto</li>
           </ul>
         </div>
         <div className="col-lg-4">
           <h4>Tribunal De Disciplina</h4>
           <ul>
-           <li>Titular: Dr. Juan Manuel Eseverri</li>
-           <li>Titular: Dr. Cesar Mena</li>
-           <li>Titular: Sr. Eduardo Oscar Viale</li>
-           <li>Suplente: Sr. Juan C Acuña</li>
-           <li>Suplente: Sr. Diego Maggiori</li>
-           <li>Suplente: Sr. Fernando Lopez del Sarto</li>
+           <li>Titular: Sr. Javier Solis</li>
+           <li>Titular: Dr. Jose A. Corral</li>
+           <li>Titular: Sr. Jose Eterovich</li>
+           <li>Suplente: Sr. Arnoldo Baquela</li>
+           <li>Suplente: Sra. Valerina Rudenko</li>
+           <li>Suplente: Sr. Edgardo Lazzarino</li>
           </ul>
         </div>
       </div>

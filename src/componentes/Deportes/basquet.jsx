@@ -1,7 +1,7 @@
 import React from "react";
 import './sports.css'
 import portBasquet from '../imagenes/port-basquet.webp'
-import logoNuevo from '../imagenes/logoNuevo.jpg'
+import logoNuevo from '../imagenes/logoNuevo.webp'
 function Basquet(){
     return(
     <main className="mainSports" style={{marginTop:'8rem'}}>

@@ -1,7 +1,7 @@
 import React from "react";
 import './sports.css'
 import futsalPort from '../imagenes/futsal_port.webp'
-import logoNuevo from '../imagenes/logoNuevo.jpg'
+import logoNuevo from '../imagenes/logoNuevo.webp'
 function Futsal(){
     return(
     <main className="mainSports" style={{marginTop:'8rem'}}>

@@ -1,6 +1,6 @@
 import React from 'react'
-import logoNuevo from '../imagenes/logoNuevo.jpg'
-import ajedrezPort from '../imagenes/ajedrez_port.jpg'
+import logoNuevo from '../imagenes/logoNuevo.webp'
+import ajedrezPort from '../imagenes/ajedrez_port.webp'
 import './sports.css'
 function Ajedrez(){
     return(

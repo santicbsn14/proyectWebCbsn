@@ -1,7 +1,7 @@
 import React from "react";
 import './sports.css'
 import portZumba from '../imagenes/zumba-port.webp'
-import logoNuevo from '../imagenes/logoNuevo.jpg'
+import logoNuevo from '../imagenes/logoNuevo.webp'
 function Zumba(){
     return(
     <main className="mainSports" style={{marginTop:'8rem'}}>

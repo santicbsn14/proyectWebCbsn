@@ -1,5 +1,5 @@
 import React from 'react'
-import logoNuevo from '../imagenes/logoNuevo.jpg'
+import logoNuevo from '../imagenes/logoNuevo.webp'
 import judoPort from '../imagenes/judo-port.webp'
 import './sports.css'
 function Judo(){

@@ -1,5 +1,5 @@
 import React from 'react'
-import logoNuevo from '../imagenes/logoNuevo.jpg'
+import logoNuevo from '../imagenes/logoNuevo.webp'
 import gimnasiaArtisticaPort from '../imagenes/gimnasia-artistica-port.webp'
 import './sports.css'
 function GimnasiaArtistica(){
