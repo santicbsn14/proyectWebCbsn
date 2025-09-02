@@ -1,93 +1,168 @@
-import React from 'react'
-import logoNuevo from '../imagenes/logoNuevo.webp'
-import rugbyPort from '../imagenes/rugby_port.webp'
-import './sports.css'
-function Rugby(){
-    return(
-    <main className='mainSports' style={{marginTop:'8rem'}}>  
-    <img src={rugbyPort} className="portadaBs col-lg-12 " alt="portadaBas" />
-    <section className="container-fluid" >
-    <div className="row">
-    <div className="accordion contenedor col-lg-6" id="accordionExample">
+import React, { useEffect, useState, useMemo } from "react";
+import "./sports.css";
+import rugbyPort from "../imagenes/rugby_port.webp";
+import logoNuevo from "../imagenes/logoNuevo.webp";
+import { getSchedules } from "../../client";
+
+function Rugby() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error,   setError]   = useState(null);
+
+  // IDs únicos para este componente (evita colisiones con otros acordeones)
+  const ACC_ID = "accordion-rugby";
+  const collapseId = (i) => `rugby-collapse-${i}`;
+  const headingId  = (i) => `rugby-heading-${i}`;
+
+  const normalize = (s) =>
+    (s || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setLoading(true);
+        const sports = await getSchedules();
+
+        // Variantes comunes del nombre
+        const TARGETS = ["rugby"];
+        const match =
+          sports.find((sport) => {
+            const n = normalize(sport?.name);
+            return TARGETS.some((k) => n.includes(normalize(k)));
+          }) || null;
+
+        setData(match);
+      } catch (err) {
+        console.error("Error al obtener los horarios:", err);
+        setError("No se pudieron cargar los horarios. Intente más tarde.");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  // Títulos únicos para el <select>
+  const categoryTitles = useMemo(() => {
+    const titles = data?.categories?.map((c) => c?.title).filter(Boolean) || [];
+    return Array.from(new Set(titles));
+  }, [data]);
+
+  return (
+    <main className="mainSports" style={{ marginTop: "8rem" }}>
+      <img src={rugbyPort} className="portadaBs col-lg-12" alt="portada-rugby" />
+
+      <section className="container-fluid">
+        <div className="row">
+          <div className="accordion contenedor col-lg-6" id={ACC_ID}>
             <h4 className="">Horarios</h4>
-            <div className="accordion-item ">
-               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
-                  Escuelita
-               </button>
-                  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div className="accordion-body">
-                        <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                        <h6>Dias: Lunes-Miercoles  Sede:Pellegrini</h6> <p>Profesores: </p>
-                          <ul className="list-group">
-                          <li className="list-group-item"> <strong>Escuelita- M8- M9- M10</strong>: 18:00hs 19:00hs(LUNES) </li>
-                          <li className="list-group-item"> <strong>M11- M12- M13</strong>: 19:00hs a 20:00hs(LUNES) </li>
-                          <li className="list-group-item"> <strong> Todas las categorias</strong>: 18:00hs a 19:00hs(MIERCOLES) </li>
-                        </ul>
-                      </div>
-                  </div>
-            </div>
-            <div className="accordion-item ">
-               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Inferiores
-               </button>
-                  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                      <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                      <h6>Dias: Martes–Jueves–Viernes   Sede:Camping- Isla Regatas</h6> 
-                      <p>Profesores: </p>
-                      <ul className="list-group">
-                        <li className="list-group-item"><strong> M14- M15</strong>: 19:00hs a 20:30hs(MARTES-JUEVES) 19:00hs a 20:00hs(VIERNES) </li>
-                        <li className="list-group-item"> <strong>M16- M17</strong>: 20:00hs a 21:30hs(MARTES) 20:00hs a 22:00hs(JUEVES) 20:30 A 22:00hs(VIERNES) </li>
-                      </ul>
-                    </div>
+
+            {loading && (
+              <div className="text-center my-4">
+                <p className="text-muted">Cargando horarios...</p>
+              </div>
+            )}
+
+            {!loading && error && (
+              <div className="text-center my-4">
+                <p className="text-danger">{error}</p>
+              </div>
+            )}
+
+            {!loading && !error && (!data?.categories || data.categories.length === 0) && (
+              <div className="text-center my-4">
+                <p className="text-muted">No se han ingresado horarios todavía.</p>
+              </div>
+            )}
+
+            {data?.categories?.map((cat, index) => (
+              <div className="accordion-item" key={cat._key || index}>
+                <h2 className="accordion-header" id={headingId(index)}>
+                  <button
+                    className={`accordion-button ${index !== 0 ? "collapsed" : ""}`}
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#${collapseId(index)}`}
+                    aria-expanded={index === 0}
+                    aria-controls={collapseId(index)}
+                  >
+                    {cat.title}
+                  </button>
+                </h2>
+
+                <div
+                  id={collapseId(index)}
+                  className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
+                  aria-labelledby={headingId(index)}
+                  data-bs-parent={`#${ACC_ID}`}
+                >
+                  <div className="accordion-body">
+                    <img
+                      src={logoNuevo}
+                      style={{ height: "44px", width: "76px" }}
+                      className="mx-auto"
+                      alt="logo"
+                    />
+
+                    {(cat.days?.length || cat.location) && (
+                      <h6>
+                        Días: {cat.days?.join(" - ") ?? "---"} Sede: {cat.location ?? "---"}
+                      </h6>
+                    )}
+
+                    {cat.coaches?.length > 0 && (
+                      <p>Profesores: {cat.coaches.join(" - ")}</p>
+                    )}
+
+                    <ul className="list-group">
+                      {cat.schedules?.map((item, i) => (
+                        <li className="list-group-item" key={item._key || i}>
+                          <strong>{item.group}</strong>: {item.startTime}hs a {item.endTime}hs
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-            <div className="accordion-item ">
-               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                 Plantel superior
-               </button>
-                  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                      <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                      <ul className="list-group">
-                        <h6>M19 y Plantel superior Sede: Camping- Isla Regatas</h6>
-                        <p> Cuerpo Tecnico: Martin Blanco- Lucas Mazzoni- Juan Ignacio Calcaterra </p>
-                        <li className="list-group-item"><strong> M9- Plantel Superior</strong>: 20:30hs a 22:00hs(MARTES-JUEVES)</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-      </div>
-      <form className="col-lg-6 row g-3 formulario mx-auto">
-        <h4>Contactar con profesores</h4>
+              </div>
+            ))}
+          </div>
+
+          <form className="col-lg-6 row g-3 formulario mx-auto">
+            <h4>Contactar con profesores</h4>
             <p>¡Obtendrá una respuesta en la dirección de correo electrónico que ingrese!</p>
-             <div className="col-md-6">
-              <label htmlFor="inputEmail4" className="form-label">Nombre</label>
-              <input type="text" className="form-control" id="inputEmail4" />
+            <div className="col-md-6">
+              <label htmlFor="inputNombre" className="form-label">Nombre</label>
+              <input type="text" className="form-control" id="inputNombre" />
             </div>
             <div className="col-md-6">
-              <label htmlFor="inputPassword4" className="form-label">Email</label>
-              <input type="email" className="form-control" id="inputPassword4" />
+              <label htmlFor="inputEmail" className="form-label">Email</label>
+              <input type="email" className="form-control" id="inputEmail" />
             </div>
             <div className="col-12">
-              <label htmlFor="inputAddress2" className="form-label">Mensaje</label>
-              <input type="text" className="form-control" style={{ height: '64px' }} id="inputAddress2" />
+              <label htmlFor="inputMensaje" className="form-label">Mensaje</label>
+              <input type="text" className="form-control" style={{ height: "64px" }} id="inputMensaje" />
             </div>
             <div className="col-lg-12">
-              <label htmlFor="inputState" className="form-label">Categoría</label>
-              <select id="inputState" className="form-select">
-                <option value="Zumba y ritmos">Escuelita</option>
-                <option value="Zumba y ritmos">Inferiores</option>
-                <option value="Zumba y ritmos">Plantel Superior</option>
+              <label htmlFor="inputCategoria" className="form-label">Categoría</label>
+              <select id="inputCategoria" className="form-select" defaultValue="">
+                <option value="" disabled>Elegí una categoría</option>
+                {categoryTitles.map((title, i) => (
+                  <option key={i} value={title}>{title}</option>
+                ))}
               </select>
             </div>
-           <div className="col-12">
-             <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
+            <div className="col-12">
+              <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
             </div>
-      </form>
-    </div> 
-  </section>
-</main>
-    )
+          </form>
+        </div>
+      </section>
+    </main>
+  );
 }
-export default Rugby
+
+export default Rugby;

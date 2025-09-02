@@ -32,6 +32,7 @@ function SedePellegrini(){
       
       <form className=" col-lg-6 col-md-12 col-sm-12 row g-3 formulario mx-auto" >
             <h4>Contactar Para Reservas</h4>
+            <p><strong>Solo para quinchos. Maximos 3(tres) mesas</strong></p>
             <p>¡Obtendra una respuesta en la direccion del correo electronico que ingrese!</p>
             <div className="col-md-6">
               <label for="inputEmail4" className="form-label">Nombre</label>

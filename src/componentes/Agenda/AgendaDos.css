@@ -1,0 +1,110 @@
+.agenda-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.agenda-title-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.agenda-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+}
+
+.agenda-subtitle {
+  color: #555;
+  font-size: 15px;
+}
+
+.agenda-content {
+  max-width: 860px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.agenda-block {
+  padding: 1.5rem;
+  background-color: #fff;
+  border-left: 5px solid red;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.agenda-week-title {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}/* ... tus estilos anteriores hasta agenda-week-title siguen igual ... */
+
+.agenda-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.agenda-event-card {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 0.6rem;
+  background-color: #fafafa;
+}
+
+.agenda-event-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.agenda-logo {
+  height: 38px;
+  width: 65px;
+}
+
+.agenda-sport {
+  margin: 0;
+  color: red;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.agenda-event-title {
+  margin: 0;
+  font-size: 13px;
+  color: #000;
+}
+
+.agenda-event-body {
+  margin-top: 0.4rem;
+  font-size: 12px;
+  color: #333;
+}
+
+.agenda-event-date,
+.agenda-event-location {
+  margin-bottom: 0.3rem;
+}
+
+.agenda-tournament {
+  font-style: italic;
+  color: #666;
+}
+
+/* Eliminar carrusel */
+.agenda-carousel-container,
+.agenda-carousel,
+.agenda-carousel-container::before,
+.agenda-carousel-container::after,
+.carousel-button,
+.carousel-button.left,
+.carousel-button.right {
+  display: none !important;
+}

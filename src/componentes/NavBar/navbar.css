@@ -1,3 +1,41 @@
+.horarios-seccion {
+  padding: 2rem 0;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease-in-out;
+}
+
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32f2f; /* Rojo */
+}
+
+.card-text {
+  font-size: 14px;
+  color: #616161; /* Gris oscuro */
+}
+
+
+
+.btn:hover {
+  background-color: #ffa000;
+  color: #fff;
+}
+
 @media (min-width: 992px) {
   .navbarFull {
     position: fixed;

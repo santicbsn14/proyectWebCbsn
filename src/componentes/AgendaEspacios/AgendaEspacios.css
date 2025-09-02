@@ -1,0 +1,115 @@
+.agenda-wrapper-espacios{
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.agenda-title-espacios{
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: red;
+}
+
+.espacios-selector {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.espacios-scroll-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.espacios-scroll-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(to left, #ffcccc, transparent);
+  pointer-events: none;
+}
+
+.scroll-hint {
+  text-align: right;
+  font-size: 0.9rem;
+  color: red;
+  margin-bottom: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+.espacios-selector button {
+  padding: 0.5rem 1rem;
+  border: 2px solid red;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  color: red;
+}
+.espacios-selector button:hover {
+  background-color: #ffa000;
+  color: white;
+  border-color: #ffa000;
+}
+.espacios-selector::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.espacios-selector button {
+  flex: 0 0 auto; /* evita que se achiquen */
+}
+.espacios-selector .btn-activo {
+  background-color: red;
+  color: white;
+  border-color: red;
+}
+
+.agenda-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.agenda-tabla th, .agenda-tabla td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.agenda-tabla th {
+  background-color: red;
+  color: #000;
+}
+
+.agenda-tabla td {
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .agenda-tabla table, .agenda-tabla thead, .agenda-tabla tbody, .agenda-tabla th, .agenda-tabla td, .agenda-tabla tr {
+    display: block;
+  }
+
+  .agenda-tabla td {
+    border: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .agenda-tabla td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+  }
+
+  .agenda-tabla thead {
+    display: none;
+  }
+}

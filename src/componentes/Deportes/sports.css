@@ -55,3 +55,67 @@ p {
   padding-bottom: 2.6px !important;
 }
 
+
+ /* Modelo diseño chatgpt */
+
+ /* ===== Refresh Deportes (suave + elegante) ===== */
+
+/* ===== Deportes – Theme V2: Flat / Line ===== */
+
+/* ===== Detallitos “club” (ADD-ON, sin romper tu CSS) ===== */
+
+/* Acordeón: transiciones y hover suave */
+.mainSports .accordion-button {
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+  border-bottom: 1px solid #eee !important;
+}
+
+.mainSports .accordion-button:hover {
+  background: #fff6f6 !important;           /* rojito MUY suave */
+}
+
+/* Al abrir: “linita roja” a la izquierda y caret rojo */
+.mainSports .accordion-button:not(.collapsed) {
+  background: #fff !important;
+  box-shadow: inset 4px 0 0 #e30613 !important; /* banda roja lateral */
+}
+
+/* Caret rojo en todos los estados (Bootstrap 5) */
+.mainSports .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e30613'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+/* Cuerpo abierto: guiño de línea roja y fondo casi blanco */
+.mainSports .accordion-collapse.show .accordion-body {
+  border-left: 4px solid #e30613 !important;
+  background: #fffafa !important;
+}
+
+/* Ítems de la lista: detalle rojo al hover */
+.mainSports .list-group-item {
+  border-left: 4px solid transparent !important;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.mainSports .list-group-item:hover {
+  border-left-color: #e30613 !important;
+  background: #fcfcfc !important;
+}
+
+/* Inputs/selects: focus acorde al rojo del club */
+.mainSports .form-control:focus,
+.mainSports .form-select:focus {
+  border-color: #e30613 !important;
+  box-shadow: 0 0 0 .15rem rgba(227,6,19,.25) !important;
+}
+
+/* Botón: mismo rojo, hover un toque más oscuro */
+.mainSports .btn-primary {
+  background: #e30613 !important;
+  border-color: #e30613 !important;
+}
+
+.mainSports .btn-primary:hover {
+  background: #b90512 !important;
+  border-color: #b90512 !important;
+}

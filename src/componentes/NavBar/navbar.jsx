@@ -6,6 +6,7 @@ import {faFacebook,faYoutube, faTwitter,faInstagram, faWhatsapp} from  '@fortawe
 import { faSearch } from  '@fortawesome/free-solid-svg-icons'
 import {Link, useNavigate} from 'react-router-dom'
 
+
 function NavBar(){
   const iconStyle = {
     fontSize: "1.12rem",
@@ -13,7 +14,12 @@ function NavBar(){
     color: 'black'
   };
   const navigate = useNavigate()
-  const [searchResults, setSearchResults] = useState([]);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const closeMenu = () => {
+    setIsExpanded(false);
+  };
+
 
   const color = 'rgb(203, 0, 0)';
 
@@ -77,15 +83,23 @@ function NavBar(){
             </div>
             <nav className="navbar navbar-expand-lg ">
       <div className="container-fluid">
-        
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <button 
+            className="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNavAltMarkup" 
+            aria-controls="navbarNavAltMarkup" 
+            aria-expanded={isExpanded} 
+            aria-label="Toggle navigation"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        <div className={`collapse navbar-collapse ${isExpanded ? 'show' : ''}`} id="navbarNavAltMarkup">
           
           <ul  className="mx-auto navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item yellow " onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <Link to='/'   className="nav-link " >
+            <Link to='/'   className="nav-link " onClick={closeMenu} >
                 <strong className="btn-dark hover" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Inicio</strong>
               </Link>
             </li>
@@ -94,8 +108,8 @@ function NavBar(){
                   <strong className="btn-dark hover">El club</strong>
               </Link>
                   <div className="dropdown-menu" aria-labelledby="submenuElClub" style={{ backgroundColor: 'rgb(203, 0 , 0)' }}>
-                      <Link to="/autoridades" className="dropdown-item">Autoridades</Link>
-                      <Link to="/historia" className="dropdown-item">Historia</Link>
+                      <Link to="/autoridades" className="dropdown-item" onClick={closeMenu}>Autoridades</Link>
+                      <Link to="/historia" className="dropdown-item" onClick={closeMenu}>Historia</Link>
                   </div>
             </li>
             <li className="nav-item yellow d-none d-lg-block" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
@@ -108,9 +122,9 @@ function NavBar(){
                   <strong className="btn-dark hover">Escuelas</strong>
               </Link>
                   <div className="dropdown-menu" aria-labelledby="submenuElClub" style={{ backgroundColor: 'rgb(203, 0 , 0)' }}>
-                      <Link to="/jardin" className="dropdown-item">Jardin</Link>
-                      <Link to="/primaria" className="dropdown-item">Escuela Primaria</Link>
-                      <Link to="/historia" className="dropdown-item">Escuela Secundaria</Link>
+                      <Link to="/jardin" className="dropdown-item" onClick={closeMenu}>Jardin</Link>
+                      <Link to="/primaria" className="dropdown-item" onClick={closeMenu}>Escuela Primaria</Link>
+                      <Link to="/historia" className="dropdown-item" onClick={closeMenu}>Escuela Secundaria</Link>
                   </div>
             </li>
             <li className="nav-item yellow d-none d-lg-block" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
@@ -123,8 +137,8 @@ function NavBar(){
                   <strong className="btn-dark hover">Instalaciones</strong>
               </Link>
                   <div className="dropdown-menu" aria-labelledby="submenuElClub" style={{ backgroundColor: 'rgb(203, 0 , 0)' }}>
-                      <Link to="/sedePellegrini" className="dropdown-item">Sede Pellegrini</Link>
-                      <Link to="/camping" className="dropdown-item">Camping</Link>
+                      <Link to="/sedePellegrini" className="dropdown-item" onClick={closeMenu}>Sede Pellegrini</Link>
+                      <Link to="/camping" className="dropdown-item" onClick={closeMenu}>Camping</Link>
                   </div>
             </li>
             <li className="nav-item yellow d-none d-lg-block" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
@@ -137,13 +151,21 @@ function NavBar(){
                   <strong className="btn-dark hover">Deportes</strong>
               </Link>
                   <div className="dropdown-menu" aria-labelledby="submenuElClub" style={{ backgroundColor: 'rgb(203, 0 , 0)' }}>
-                      <Link to="/basquet" className="dropdown-item">Basquet</Link>
-                      <Link to="/ajedrez" className="dropdown-item">Ajedrez</Link>
-                      <Link to="/futbol" className="dropdown-item">Futbol</Link>
-                      <Link to="/gimnasiaAcuatica" className="dropdown-item">Gimnasia Acuatica</Link>
-                      <Link to="/gimnasiaArtistica" className="dropdown-item">Gimnasia Artistica</Link>
-                      <Link to="/EFI" className="dropdown-item">EFI</Link>
-                      <Link to="/futsal" className="dropdown-item">Futsal</Link>
+                      <Link to="/basquet" className="dropdown-item" onClick={closeMenu}>Basquet</Link>
+                      <Link to="/ajedrez" className="dropdown-item" onClick={closeMenu}>Ajedrez</Link>
+                      <Link to="/futbol" className="dropdown-item" onClick={closeMenu}>Futbol</Link>
+                      <Link to="/gimnasiaAcuatica" className="dropdown-item" onClick={closeMenu}>Gimnasia Acuatica</Link>
+                      <Link to="/gimnasiaArtistica" className="dropdown-item" onClick={closeMenu}>Gimnasia Artistica</Link>
+                      <Link to="/EFI" className="dropdown-item" onClick={closeMenu}>EFI</Link>
+                      <Link to="/futsal" className="dropdown-item" onClick={closeMenu}>Futsal</Link>
+                      <Link to="/gimnasio" className="dropdown-item" onClick={closeMenu}>Gimnasio</Link>
+                      <Link to="/handball" className="dropdown-item" onClick={closeMenu}>Handball</Link>
+                      <Link to="/hockey" className="dropdown-item" onClick={closeMenu}>Hockey</Link>
+                      <Link to="/judo" className="dropdown-item" onClick={closeMenu}>Judo</Link>
+                      <Link to="/natacion" className="dropdown-item" onClick={closeMenu}>Natación</Link>
+                      <Link to="/taekwondo" className="dropdown-item" onClick={closeMenu}>Taekwondo</Link>
+                      <Link to="/voley" className="dropdown-item" onClick={closeMenu}>Voley</Link>
+                      <Link to="/zumba" className="dropdown-item" onClick={closeMenu}>Zumba</Link>
                   </div>
             </li>
             <li className="nav-item yellow d-none d-lg-block" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
@@ -156,8 +178,8 @@ function NavBar(){
                   <strong className="btn-dark hover">Area de salud</strong>
               </Link>
                   <div className="dropdown-menu" aria-labelledby="submenuElClub" style={{ backgroundColor: 'rgb(203, 0 , 0)' }}>
-                      <Link to="/autoridades" className="dropdown-item">Kinesiologia</Link>
-                      <Link to="/historia" className="dropdown-item">Nutricion</Link>
+                      <Link to="/autoridades" className="dropdown-item" onClick={closeMenu}>Kinesiologia</Link>
+                      <Link to="/historia" className="dropdown-item" onClick={closeMenu}>Nutricion</Link>
                   </div>
             </li>
             <li className="nav-item yellow d-none d-lg-block" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>

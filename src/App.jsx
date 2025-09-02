@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
-//Componentes
+import * as React from 'react'
+import logoSplash from './componentes/imagenes/logoNuevo.webp'
 import NavBar from './componentes/NavBar/navbar.jsx';
 import Home from './componentes/Home/home.jsx';
 import Footer from './componentes/Footer/footer.jsx';
@@ -8,8 +9,8 @@ import Basquet from './componentes/Deportes/basquet.jsx';
 import Futbol from './componentes/Deportes/futbol.jsx';
 import './App.css';
 import Contacto from './componentes/Contacto/contacto.jsx';
-//
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainSports from './componentes/Mains/mainDeportes.jsx';
 import RenderNewsRequests from './componentes/NewsRequests/renderNewsRequests.jsx';
 import MainInstalaciones from './componentes/Mains/mainInstalaciones.jsx';
@@ -26,8 +27,6 @@ import Zumba from './componentes/Deportes/zumba.jsx';
 import Futsal from './componentes/Deportes/futsal.jsx';
 import Jardin from './componentes/Escuela/jardin.jsx';
 import Primaria from './componentes/Escuela/primario.jsx';
-import LoginPanelAdmin from './componentes/PanelAdministrador/loginForAdmin.jsx';
-import PanelAdmin from './componentes/PanelAdministrador/panelAdmin.jsx';
 import MainAreaSalud from './componentes/Mains/mainAreaSalud.jsx';
 import Morteo from './componentes/Instalaciones/morteo.jsx';
 import Rugby from './componentes/Deportes/rugby.jsx';
@@ -40,20 +39,44 @@ import Judo from './componentes/Deportes/judo.jsx';
 import Natacion from './componentes/Deportes/natacion.jsx';
 import Historia from './componentes/ElClub/historia.jsx';
 import Secundaria from './componentes/Escuela/secundario.jsx';
+import ScrollToTop from './componentes/ScrollToTop/ScrollToTop.jsx';
+
+import NavbarContainer from './componentes/NavBar/NavbarContainer.jsx';
+import AgendaDos from './componentes/Agenda/AgendaDos.jsx';
+import AgendaDetail from './componentes/AgendaDetail/AgendaDetail.jsx';
+import AgendaEspacios from './componentes/AgendaEspacios/AgendaEspacios.jsx';
+
 
 
 
 
 function App() {
-  const keyPanel = import.meta.env.VITE_REACT_APP_KEY_PANEL
+
+  const [loading, setLoading] = React.useState(true);
+  
+
+  React.useEffect(() => {
+    // Simula un tiempo de carga o espera a que se carguen recursos
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Ajusta este tiempo según tus necesidades
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="splash-screen">
+        <img src={logoSplash} alt="Logo" />
+        <h4>Cargando...</h4>
+      </div>
+    );
+  }
 
   return (
     <div className='app'>
       <BrowserRouter>
-        <NavBar />
+      <ScrollToTop />
+        <NavbarContainer />
         <Routes>
-          <Route path={`/loginForAdmin/${keyPanel}`} element={<LoginPanelAdmin />} />
-          <Route path={'/panelAdmin'} element={<PanelAdmin />} />
           <Route path='/' element={<Home />} />
           <Route path="/newsRequests/:word" element={<RenderNewsRequests />} />
           <Route path="/newsdetail/:id" element={<NewsDetailContainer />} />
@@ -87,6 +110,9 @@ function App() {
           <Route path="/secundaria" element={<Secundaria />} />
           <Route path="/historia" element={<Historia />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/agenda" element={<AgendaDos />} />
+          <Route path="/agenda/:id" element={<AgendaDetail />} />
+          <Route path="/agendaEspacios" element={<AgendaEspacios />} />
         </Routes>
         <Footer />
       </BrowserRouter>

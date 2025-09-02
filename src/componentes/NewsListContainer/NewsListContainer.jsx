@@ -12,7 +12,6 @@ function NewsListContainer() {
   async function fetchNews() {
     try {
       const response = await getPosts();
-
       setNews(response);
       setLoading(false)
     } catch (error) {

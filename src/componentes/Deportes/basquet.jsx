@@ -1,70 +1,101 @@
-import React from "react";
-import './sports.css'
-import portBasquet from '../imagenes/port-basquet.webp'
-import logoNuevo from '../imagenes/logoNuevo.webp'
-function Basquet(){
-    return(
-    <main className="mainSports" style={{marginTop:'8rem'}}>
-      <img src={portBasquet} className="portadaBs col-lg-12 " alt="portadaBas" />
-    <section className="container-fluid" >
-    <div className="row">
-      <div className="accordion contenedor col-lg-6" id="accordionExample">
+import React, { useEffect, useState } from "react";
+import './sports.css';
+import portBasquet from '../imagenes/port-basquet.webp';
+import logoNuevo from '../imagenes/logoNuevo.webp';
+import { getSchedules } from "../../client";
+
+
+function Basquet() {
+  const [basquetData, setBasquetData] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const sports = await getSchedules();
+        const basquet = sports.find((sport) => sport.name === "Basquet");
+        setBasquetData(basquet);
+      } catch (error) {
+        console.error("Error al obtener los horarios:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  return (
+    <main className="mainSports" style={{ marginTop: '8rem' }}>
+      <img src={portBasquet} className="portadaBs col-lg-12" alt="portadaBas" />
+
+      <section className="container-fluid">
+        <div className="row">
+          <div className="accordion contenedor col-lg-6" id="accordionExample">
             <h4 className="">Horarios</h4>
-            <div className="accordion-item ">
-               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
-                  Minibasquet
-               </button>
-                  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div className="accordion-body">
-                        <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                        <h6>Dias: Lunes-Miercoles-Viernes  Sede:Pellegrini</h6> <p>Profesores: Juan Ignacio Calcaterra- Ramiro Rolon-Rafael Calcaterra</p>
-                          <ul className="list-group">
-                          <li className="list-group-item"> <strong>Mosquitos</strong> 17:30hs 18:15hs </li>
-                          <li className="list-group-item"> <strong>Cebollitas-Premini</strong> 18:00hs a 19:00hs </li>
-                          <li className="list-group-item"> <strong> Mini-Sub 13</strong> 19:00hs a 20:00hs </li>
-                        </ul>
-                      </div>
+            {basquetData?.categories?.length === 0 && (
+              <div className="text-center my-4">
+                <p className="text-muted">No hay horarios ingresados para este deporte.</p>
+              </div>
+            )}
+
+            {!basquetData && (
+              <div className="text-center my-4">
+                <p className="text-danger">No se pudieron cargar los horarios. Intente más tarde.</p>
+              </div>
+            )}
+
+            {basquetData?.categories?.map((cat, index) => (
+              <div className="accordion-item" key={cat._key || index}>
+                <button
+                  className={`accordion-button ${index !== 0 ? "collapsed" : ""}`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#collapse${index}`}
+                  aria-expanded={index === 0}
+                  aria-controls={`collapse${index}`}
+                >
+                  {cat.title}
+                </button>
+
+                <div
+                  id={`collapse${index}`}
+                  className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
+                  aria-labelledby={`heading${index}`}
+                  data-bs-parent="#accordionExample"
+                >
+                  <div className="accordion-body">
+                    <img
+                      src={logoNuevo}
+                      style={{ height: '44px', width: '76px' }}
+                      className="mx-auto"
+                      alt="logo"
+                    />
+
+                    {(cat.days?.length || cat.location) && (
+                      <h6>
+                        Días: {cat.days?.join(" - ") ?? '---'} Sede: {cat.location ?? '---'}
+                      </h6>
+                    )}
+
+                    {cat.coaches?.length > 0 && (
+                      <p>Profesores: {cat.coaches.join(" - ")}</p>
+                    )}
+
+                    <ul className="list-group">
+                      {cat.schedules?.map((item, i) => (
+                        <li className="list-group-item" key={item._key || i}>
+                          <strong>{item.group}</strong>: {item.startTime}hs a {item.endTime}hs
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-            </div>
-            <div className="accordion-item ">
-               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Inferiores y Primera
-               </button>
-                  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                      <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                      <h6>Dias: Lunes–Miércoles–Viernes   Sede:Pellegrini</h6> 
-                      <p>Profesores: Rafael Calcaterra-Juan Ignacio Calcaterra-Lucas Mazzoni- Martin Blanco</p>
-                      <ul className="list-group">
-                        <li className="list-group-item"><strong> Sub 17- Sub 21 Amarillo</strong>: 14:30hs a 16:00hs </li>
-                        <li className="list-group-item"> <strong>Sub 17- Sub 21 Rojo</strong>: 16:00hs a 17:30hs </li>
-                        <li className="list-group-item"> <strong> Sub 15 amarillo y rojo- Sub 14 femenino</strong>: 20:00hs a 21:00hs </li>
-                        <li className="list-group-item"> <strong> 1ra Femenina</strong>: 21:00hs a 22:00hs </li>
-                        <li className="list-group-item"> <strong> 1ra amarillo</strong>: 22:00hs a 23:00hs </li>
-                      </ul>
-                    </div>
-                  </div>
-            </div>
-            <div className="accordion-item ">
-               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                 Maxi basquet
-               </button>
-                  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                      <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                      <ul className="list-group">
-                        <h6>Dias: Martes-Jueves Sede: Pellegrini</h6>
-                        <p> Cuerpo Tecnico: ------ </p>
-                        <li className="list-group-item"> <strong> Maxi femenino y masculino</strong>: 21:00hs a 22:00hs </li>
-                      </ul>
-                    </div>
-                  </div>
-            </div>
-      </div>
-      <form className="col-lg-6 row g-3 formulario mx-auto">
-        <h4>Contactar con profesores</h4>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <form className="col-lg-6 row g-3 formulario mx-auto">
+            <h4>Contactar con profesores</h4>
             <p>¡Obtendrá una respuesta en la dirección de correo electrónico que ingrese!</p>
-             <div className="col-md-6">
+            <div className="col-md-6">
               <label htmlFor="inputEmail4" className="form-label">Nombre</label>
               <input type="text" className="form-control" id="inputEmail4" />
             </div>
@@ -79,19 +110,19 @@ function Basquet(){
             <div className="col-lg-12">
               <label htmlFor="inputState" className="form-label">Categoría</label>
               <select id="inputState" className="form-select">
-                <option value="Zumba y ritmos">Mini basquet</option>
-                <option value="Zumba y ritmos">Inferiores</option>
-                <option value="Zumba y ritmos">Plantel Superior</option>
-                <option value="Zumba y ritmos">Maxi basquet</option>
+                {basquetData?.categories?.map((cat, i) => (
+                  <option key={i} value={cat.title}>{cat.title}</option>
+                ))}
               </select>
             </div>
-           <div className="col-12">
-             <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
+            <div className="col-12">
+              <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
             </div>
-      </form>
-  </div> 
-  </section>
-  </main>
-    )
+          </form>
+        </div>
+      </section>
+    </main>
+  );
 }
-export default Basquet
+
+export default Basquet;

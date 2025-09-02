@@ -1,50 +1,124 @@
-import React from 'react'
-import logoNuevo from '../imagenes/logoNuevo.webp'
-import futsalPort from '../imagenes/futsal_port.webp'
-import './sports.css'
-function Futbol(){
-    return(
-    <main className='mainSports' style={{marginTop:'8rem'}}> 
-    <img src={futsalPort} className="portadaBs col-lg-12 " alt="portadaBas" />
-    <section className="container-fluid" >
-      <div className="row">
-        <div className="accordion contenedor col-lg-6" id="accordionExample">
+// Futbol (Sanity)
+import React, { useEffect, useState } from "react";
+import logoNuevo from "../imagenes/logoNuevo.webp";
+import futsalPort from "../imagenes/futsal_port.webp";
+import "./sports.css";
+import { getSchedules } from "../../client";
+
+function Futbol() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Normaliza acentos y mayúsculas para matchear variantes ("Fútbol", "Futbol", "Futsal")
+  const normalize = (s) =>
+    (s || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setLoading(true);
+        const sports = await getSchedules();
+
+        const TARGET_KEYWORDS = ["futbol", "futsal"];
+        const match =
+          sports.find((sport) => {
+            const n = normalize(sport?.name);
+            return TARGET_KEYWORDS.some((k) => n.includes(k));
+          }) || null;
+
+        setData(match);
+      } catch (err) {
+        console.error("Error al obtener los horarios:", err);
+        setError("No se pudieron cargar los horarios. Intente más tarde.");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  return (
+    <main className="mainSports" style={{ marginTop: "8rem" }}>
+      <img src={futsalPort} className="portadaBs col-lg-12" alt="portada-futbol" />
+
+      <section className="container-fluid">
+        <div className="row">
+          <div className="accordion contenedor col-lg-6" id="accordionExample">
             <h4 className="">Horarios</h4>
-            <div className="accordion-item ">
-               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
-                  Infantiles
-               </button>
-                  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div className="accordion-body">
-                        <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                        <h6>Dias: Martes-Jueves-Viernes  Sede:Pellegrini-Morteo-Camping</h6> <p>Profesores: -----------</p>
-                          <ul className="list-group">
-                          <li className="list-group-item"> <strong>2019- 2018</strong>: 18:00hs 19:00hs(MARTES-JUEVES: PELLEGRINI) </li>
-                          <li className="list-group-item"> <strong>2017</strong>: 18:00hs a 19:00hs(MARTES-VIERNES: MORTEO -- JUEVES: PELLEGRINI) </li>
-                          <li className="list-group-item"> <strong>2016</strong>: 19:00hs a 20:00hs (JUEVES-VIERNES: MORTEO -- MARTES: PELLEGRINI) </li>
-                          <li className="list-group-item"> <strong>2015</strong>: 19:00hs a 20:00hs (MARTES-VIERNES: MORTEO -- JUEVES: PELLEGRINI)</li>
-                          <li className="list-group-item"> <strong>2014</strong>: 20:00hs a 21:00hs (JUEVES-VIERNES: MORTEO -- MARTES: PELLEGRINI)</li>
-                          <li className="list-group-item"> <strong>2013</strong>: 20:00hs a 21:00hs (MARTES: MORTEO -- JUEVES: PELLEGRINI -- VIERNES: CAMPING)</li>
-                        </ul>
-                      </div>
+
+            {loading && (
+              <div className="text-center my-4">
+                <p className="text-muted">Cargando horarios...</p>
+              </div>
+            )}
+
+            {!loading && error && (
+              <div className="text-center my-4">
+                <p className="text-danger">{error}</p>
+              </div>
+            )}
+
+            {!loading && !error && (!data?.categories || data.categories.length === 0) && (
+              <div className="text-center my-4">
+                <p className="text-muted">No se han ingresado horarios todavía.</p>
+              </div>
+            )}
+
+            {data?.categories?.map((cat, index) => (
+              <div className="accordion-item" key={cat._key || index}>
+                <button
+                  className={`accordion-button ${index !== 0 ? "collapsed" : ""}`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#collapse${index}`}
+                  aria-expanded={index === 0}
+                  aria-controls={`collapse${index}`}
+                >
+                  {cat.title}
+                </button>
+
+                <div
+                  id={`collapse${index}`}
+                  className={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}
+                  aria-labelledby={`heading${index}`}
+                  data-bs-parent="#accordionExample"
+                >
+                  <div className="accordion-body">
+                    <img
+                      src={logoNuevo}
+                      style={{ height: "44px", width: "76px" }}
+                      className="mx-auto"
+                      alt="logo"
+                    />
+
+                    {(cat.days?.length || cat.location) && (
+                      <h6>
+                        Días: {cat.days?.join(" - ") ?? "---"} Sede: {cat.location ?? "---"}
+                      </h6>
+                    )}
+
+                    {cat.coaches?.length > 0 && (
+                      <p>Profesores: {cat.coaches.join(" - ")}</p>
+                    )}
+
+                    <ul className="list-group">
+                      {cat.schedules?.map((item, i) => (
+                        <li className="list-group-item" key={item._key || i}>
+                          <strong>{item.group}</strong>: {item.startTime}hs a {item.endTime}hs
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-            </div>
-            <div className="accordion-item ">
-               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Inferiores
-               </button>
-                  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                      <img src={logoNuevo} style={{height: '44px', width:'76px'}} className="mx-auto" alt="logo"/>
-                      <h6>Dias: Lunes a Jueves   Sede:Camping</h6> 
-                      <p>Profesores: </p>
-                      <ul className="list-group">
-                        <li className="list-group-item"><strong>2007 a 2012</strong>: 18:00hs a 19:30hs </li>
-                      </ul>
-                    </div>
-                  </div>
-            </div>
-      </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <form className="col-lg-6 row g-3 formulario mx-auto">
             <h4>Contactar con profesores</h4>
             <p>¡Obtendrá una respuesta en la dirección de correo electrónico que ingrese!</p>
@@ -58,22 +132,24 @@ function Futbol(){
             </div>
             <div className="col-12">
               <label htmlFor="inputAddress2" className="form-label">Mensaje</label>
-              <input type="text" className="form-control" style={{ height: '64px' }} id="inputAddress2" />
+              <input type="text" className="form-control" style={{ height: "64px" }} id="inputAddress2" />
             </div>
             <div className="col-lg-12">
               <label htmlFor="inputState" className="form-label">Categoría</label>
-                 <select id="inputState" className="form-select">
-                   <option value="Futbol Infantil">Futbol Infantil</option>
-                   <option value="Futbol Infantil">Inferiores</option>
-                 </select>
+              <select id="inputState" className="form-select">
+                {data?.categories?.map((cat, i) => (
+                  <option key={i} value={cat.title}>{cat.title}</option>
+                ))}
+              </select>
             </div>
             <div className="col-12">
-               <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
+              <button type="submit" id="probando" className="btn btn-primary">Enviar</button>
             </div>
           </form>
-    </div>
-  </section>
-      </main>
-    )
+        </div>
+      </section>
+    </main>
+  );
 }
-export default Futbol
+
+export default Futbol;
