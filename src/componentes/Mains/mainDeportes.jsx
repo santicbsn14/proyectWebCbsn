@@ -93,11 +93,6 @@ function MainSports(){
             </Link>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
-            <Link to='/basquet'> 
-                <img src={patinMain} className="imgMain" loading="lazy" alt="" />
-            </Link>
-            </div>
-            <div className="col-lg-4 col-md-12 col-sm-12 mx-auto">
             <Link to='/natacion'> 
                 <img src={natacionMain} className="imgMain" loading="lazy" alt="" />
             </Link>

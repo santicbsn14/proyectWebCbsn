@@ -7,20 +7,21 @@ function AgendaListContainer() {
   const [agendas, setAgendas] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    async function fetchAgendas() {
-      const data = await getWeeklySchedules();
-      setAgendas(data.slice(0, 2)); // Mostramos las 2 últimas
-    }
+useEffect(() => {
+  async function fetchAgendas() {
+    const data = await getWeeklySchedules();
+    // ✅ Filtramos agendas que no tienen eventos
+    const agendasConEventos = data.filter(a => Array.isArray(a.events) && a.events.length > 0);
+    setAgendas(agendasConEventos.slice(0, 2)); // Mostramos solo las 2 últimas
+  }
 
-    fetchAgendas();
-  }, []);
+  fetchAgendas();
+}, []);
 
   return (
     <section className="agenda-preview-section">
       <div className="agenda-preview-header">
         <h3 className="agenda-preview-title">Agenda deportiva</h3>
-        <Link to="/agenda" className="agenda-preview-link">Ver agenda completa</Link>
       </div>
 
       <div className="agenda-preview-cards">

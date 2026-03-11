@@ -89,19 +89,21 @@ export const getWeeklySchedules = async () => {
     startDate,
     endDate,
     "coverImage": coverImage.asset->url,
-    "events": *[_type == "sportEvent" && section._ref == ^._id] | order(date asc) {
+    events[]->{
       _id,
-      title,
-      date,
-      location,
-      locationType,
-      tournament,
-      "sport": sport->{name}
+      titulo,
+      fecha,
+      lugar,
+      condicion,
+      partidos,
+      notas,
+      "sport": deporte->{name}
     }
   }`;
 
   return await client.fetch(query);
 };
+
 export const getAgendaById = async (id) => {
   const query = `*[_type == "weeklySchedule" && _id == $id][0] {
     _id,

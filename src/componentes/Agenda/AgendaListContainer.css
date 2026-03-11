@@ -55,9 +55,11 @@
 
 .agenda-card-img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: 220px;      /* antes 160px, le damos más aire */
+  object-fit: contain; /* mostramos toda la imagen completa */
+  background-color: #f5f5f5; /* para que no quede vacío si sobra espacio */
 }
+
 
 .agenda-card-body {
   padding: 16px;

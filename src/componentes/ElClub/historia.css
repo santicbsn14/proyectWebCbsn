@@ -1,3 +1,198 @@
-.textoHistoria{
-    font-size: 13px !important;
+/* Identidad suave para la página de Historia */
+.historia {
+  --bel-red: #e30613;
+  --bel-red-dark: #b90512;
+  --ink: #111213;
+  --line: #e6e6e6;
+}
+
+/* Hero superior (si querés, podés mantener tus reglas previas) */
+.historia .portAutoridades {
+  width: 100% !important;
+  height: 659px !important;
+  display: block !important;
+  object-fit: fill !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  left: 0px !important;
+}
+
+/* Encabezado: título + badge “Desde 1927” */
+.historia .historia-heading {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .75rem;
+}
+.historia .historia-heading h4 {
+  margin: 0;
+  font-weight: 800;
+  color: var(--bel-red);
+  position: relative;
+}
+.historia .historia-heading h4::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--bel-red);
+  margin-top: .35rem;
+}
+.historia .badgeHistoria {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 800;
+  color: var(--bel-red);
+  border: 1px solid var(--bel-red);
+  padding: .15rem .5rem;
+  border-radius: 999px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+/* Columna de texto */
+.historia .historia-copy {
+  border-left: 3px;
+  padding-left: 16px;
+}
+
+/* Primer párrafo con drop cap */
+.historia .historia-copy .textoHistoria:first-of-type::first-letter {
+  float: left;
+  font-size: 3rem;
+  line-height: .9;
+  padding-right: .25rem;
+  padding-top: .1rem;
+  font-weight: 800;
+  color: var(--bel-red);
+}
+
+/* Ritmo vertical */
+.historia .textoHistoria {
+  margin-bottom: .75rem;
+  color: var(--ink);
+}
+
+/* Figura derecha */
+.historia .historia-figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Caption fijo debajo */
+.historia .historia-caption {
+  font-size: .85rem;
+  padding: .5rem .75rem;
+  color: #222;
+  border-top: 1px solid #eee;
+  background: #fff;
+  margin: 0;
+}
+
+/* Sticky en desktop */
+@media (min-width: 992px) {
+  .historia .sticky {
+    position: sticky;
+    top: 6rem;
+  }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 991.98px) {
+  .historia .historia-copy { border-left-width: 2px; }
+  .historia .historia-img { height: 220px; }
+}
+
+/* Mini galería */
+.historia-mini-gallery {
+  width: 300px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Grilla 2x2 */
+.historia-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  padding: 6px;
+  height: 250px;
+  box-sizing: border-box;
+}
+.historia-gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  transition: transform .15s ease, border-color .15s ease, filter .15s ease;
+  cursor: pointer;
+}
+.historia-gallery-grid img:hover {
+  transform: scale(1.02);
+  border-color: var(--bel-red);
+  filter: saturate(1.05);
+}
+
+/* Caption dentro mini-galería */
+.historia-mini-gallery .historia-caption {
+  position: static;
+  background: #fff !important;
+  color: #222 !important;
+  border-top: 1px solid #eee !important;
+  text-shadow: none !important;
+  border-radius: 0;
+  margin: 0;
+  padding: .5rem .6rem .6rem;
+}
+
+/* Responsivo */
+@media (max-width: 991.98px) {
+  .historia-mini-gallery {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+/* === Modal para ampliar imágenes === */
+.historia-modal {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left: 0 */
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+.historia-modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.historia-modal button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bel-red);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.historia-modal button:hover {
+  background: var(--bel-red-dark);
 }

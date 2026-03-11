@@ -108,3 +108,47 @@
 .carousel-button.right {
   display: none !important;
 }
+/* --- NUEVO: agrupación por día y columnas Local/Visitante --- */
+
+.agenda-day-block { margin-top: 1.5rem; }
+
+.fecha-num { font-size: 0.9rem; color: #64748b; }
+
+.agenda-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 800px) {
+  .agenda-columns { grid-template-columns: 1fr; }
+}
+
+.agenda-col { display: flex; flex-direction: column; gap: 10px; }
+
+.col-header {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 4px;
+}
+
+.col-title {
+  font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: .5px;
+  padding: 4px 10px; border-radius: 999px; border: 1px solid #e5e7eb; background: #f8fafc;
+}
+
+.col-empty { color: #64748b; font-size: 13px; margin: 0 0 8px 2px; }
+
+/* Diferenciación visual local/visitante (suave, conservando tu estética) */
+.card-local { background: #fcfffc; border-color: #d9f8df; }
+.card-visitante { background: #f8f9ff; border-color: #dfe4ff; }
+
+/* ya tenías estos: .agenda-event-card, .agenda-event-header, .agenda-logo, .agenda-sport, etc. */
+.partidos-lista { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.partido-item { display: grid; gap: 2px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 6px; }
+.partido-item:last-child { border-bottom: none; }
+.partido-main { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.partido-cat { font-weight: 500; }
+.partido-hora { font-variant-numeric: tabular-nums; font-weight: 600; }
+.partido-hora.vacio { opacity: .6; font-weight: 400; }
+.partido-detalle { font-size: 0.9rem; color: #475569; }
+
+.evento-notas { margin-top: 10px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px; border-radius: 8px; }
