@@ -45,6 +45,8 @@ import NavbarContainer from './componentes/NavBar/NavbarContainer.jsx';
 import AgendaDos from './componentes/Agenda/AgendaDos.jsx';
 import AgendaDetail from './componentes/AgendaDetail/AgendaDetail.jsx';
 import AgendaEspacios from './componentes/AgendaEspacios/AgendaEspacios.jsx';
+import HorariosCompletos from './componentes/Horarios/HorariosCompletos.jsx';
+// import GeneradorQR from './componentes/Horarios/GeneradorQR.jsx';
 
 
 
@@ -113,6 +115,8 @@ function App() {
           <Route path="/agenda" element={<AgendaDos />} />
           <Route path="/agenda/:id" element={<AgendaDetail />} />
           <Route path="/agendaEspacios" element={<AgendaEspacios />} />
+          <Route path="/horarios" element={<HorariosCompletos />} />
+          {/* <Route path="/generador-qr" element={<GeneradorQR />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>
